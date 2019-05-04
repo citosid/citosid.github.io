@@ -1,4 +1,4 @@
-theme: jekyll-theme-hydejack
+theme: qwtel/hydejack
 title: Abraham Cruz
 plugins:
   - jekyll-paginate
