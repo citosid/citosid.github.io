@@ -9,7 +9,7 @@ paginate_path:         /blog/page-:num/
 # Menu in the sidebar
 menu:
   - title:             About
-    url:               /about
+    url:               /about/
 
 # Footer
 copyright:             © 2019. All rights reserved.
