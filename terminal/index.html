@@ -1,31 +1,31 @@
 <!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>abrahamsustaita.com</title>
-<link rel=stylesheet href=/css/style.min.d1e290959910f6c3a45bba8862f19375aad92d978f8dd5a464c2326b946326ee.css integrity="sha256-0eKQlZkQ9sOkW7qIYvGTdarZLZePjdWkZMIya5RjJu4="><link rel=icon type=image/x-icon href=/favicon.ico></head><body><div id=terminal><div class=window-header><div class="window-button close"></div><div class="window-button minimize"></div><div class="window-button maximize"></div></div><div class=terminal-content><div class=command-line><span class=prompt>me@abrahamsustaita.com:~$</span>
+<link rel=stylesheet href=/css/style.min.09c30f80fe0599bb94efac4e6c589a514fd57e47973edd77e01f1d7e3afc6f22.css integrity="sha256-CcMPgP4FmbuU76xObFiaUU/VfkeXPt134B8dfjr8byI="><link rel=icon type=image/x-icon href=/favicon.ico></head><body><div id=terminal><div class=window-header><div class="window-button close"></div><div class="window-button minimize"></div><div class="window-button maximize"></div></div><div class=terminal-content><div class=command-line><span class=prompt>me@abrahamsustaita.com:~$</span>
 <span class=command>cat index.md</span></div><article class=post-content><h1 class=post-title>WezTerm Configuration</h1><div class=post-meta>📆 December 25, 2024 📖 1 min</div><p>In this post I&rsquo;ll add my configuration for WezTerm. At the end, it will look like this:</p><figure class=terminal-image><div class=image-frame><div class=image-header><span class="window-button close"></span>
 <span class="window-button minimize"></span>
 <span class="window-button maximize"></span>
 <span class=image-title>WezTerm</span></div><img src=/terminal/wezterm_hu2499545642803733613.png alt=WezTerm loading=lazy class=terminal-img style=background-image:url(/terminal/wezterm_hu2492357052233697420.png)></div></figure><h2 id=setting-up-keybindings>Setting up keybindings</h2><p>The first step is to add a key binding. In our case, it will be <code>LEADER + p</code> where <code>LEADER</code> will be mapped to
-<code>CTRL + a</code>.</p><p>In your <code>.wezterm.lua</code> file add:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#66d9ef>local</span> wezterm <span style=color:#f92672>=</span> require(<span style=color:#e6db74>&#34;wezterm&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>local</span> config <span style=color:#f92672>=</span> wezterm.config_builder()
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>config.leader <span style=color:#f92672>=</span> { key <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;a&#34;</span>, mods <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;CTRL&#34;</span>, timeout_milliseconds <span style=color:#f92672>=</span> <span style=color:#ae81ff>2000</span> }
-</span></span><span style=display:flex><span>config.keys <span style=color:#f92672>=</span> {
-</span></span><span style=display:flex><span>  {
-</span></span><span style=display:flex><span>    mods <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;LEADER&#34;</span>,
-</span></span><span style=display:flex><span>    key <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;p&#34;</span>,
-</span></span><span style=display:flex><span>    action <span style=color:#f92672>=</span> wezterm.action_callback(<span style=color:#66d9ef>function</span>(window, pane)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>end</span>),
-</span></span><span style=display:flex><span>  },
-</span></span><span style=display:flex><span>}
+<code>CTRL + a</code>.</p><p>In your <code>.wezterm.lua</code> file add:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-lua data-lang=lua><span class=line><span class=cl><span class=kd>local</span> <span class=n>wezterm</span> <span class=o>=</span> <span class=n>require</span><span class=p>(</span><span class=s2>&#34;wezterm&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=kd>local</span> <span class=n>config</span> <span class=o>=</span> <span class=n>wezterm.config_builder</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>config.leader</span> <span class=o>=</span> <span class=p>{</span> <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;a&#34;</span><span class=p>,</span> <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;CTRL&#34;</span><span class=p>,</span> <span class=n>timeout_milliseconds</span> <span class=o>=</span> <span class=mi>2000</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=n>config.keys</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;LEADER&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;p&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=n>action</span> <span class=o>=</span> <span class=n>wezterm.action_callback</span><span class=p>(</span><span class=kr>function</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>pane</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=kr>end</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div></article></div></div></body></html>
