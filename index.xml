@@ -1,3 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>abe@blinkin $</title><link>https://abrahamsustaita.com/</link><description>Recent content on abe@blinkin $</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://abrahamsustaita.com/index.xml" rel="self" type="application/rss+xml"/><item><title>WezTerm Configuration</title><link>https://abrahamsustaita.com/posts/wezterm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://abrahamsustaita.com/posts/wezterm/</guid><description>&lt;p>In this post I&amp;rsquo;ll add my configuration for WezTerm. At the end, it will look like this:&lt;/p>
-&lt;img src="https://abrahamsustaita.com/img/wezterm.png" alt="WezTerm" class="center" style="border-radius: 2px;" /></description><content>&lt;p>In this post I&amp;rsquo;ll add my configuration for WezTerm. At the end, it will look like this:&lt;/p>
-&lt;img src="https://abrahamsustaita.com/img/wezterm.png" alt="WezTerm" class="center" style="border-radius: 2px;" /></content></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>abrahamsustaita.com</title><link>https://abrahamsustaita.com/</link><description>Recent content on abrahamsustaita.com</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://abrahamsustaita.com/index.xml" rel="self" type="application/rss+xml"/><item><title>WezTerm Configuration</title><link>https://abrahamsustaita.com/terminal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://abrahamsustaita.com/terminal/</guid><description>&lt;p>In this post I&amp;rsquo;ll add my configuration for WezTerm. At the end, it will look like this:&lt;/p>
+
+
+
+
+
+&lt;figure class="terminal-image">
+ &lt;div class="image-frame">
+ &lt;div class="image-header">
+ &lt;span class="window-button close">&lt;/span>
+ &lt;span class="window-button minimize">&lt;/span>
+ &lt;span class="window-button maximize">&lt;/span>
+ &lt;span class="image-title">WezTerm&lt;/span>
+ &lt;/div>
+ 
+ 
+ 
+ &lt;img
+ src="https://abrahamsustaita.com/terminal/wezterm_hu2499545642803733613.png"
+ alt="WezTerm"
+ loading="lazy"
+ class="terminal-img"
+ style="background-image: url(/terminal/wezterm_hu2492357052233697420.png);"
+ >
+ 
+ &lt;/div>
+ 
+&lt;/figure></description></item></channel></rss>
