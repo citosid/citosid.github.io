@@ -1,5 +1,6 @@
 ---
 title: WezTerm Configuration
+date: 2024-12-25
 ---
 
 In this post I'll add my configuration for WezTerm. At the end, it will look like this:

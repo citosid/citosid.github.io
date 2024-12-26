@@ -7,7 +7,7 @@
 <article class="post-content">
     <h1 class="post-title">{{ .Title }}</h1>
     <div class="post-meta">
-        Posted on {{ .Date.Format "2006-01-02" }} • {{ .ReadingTime }} min read
+        📆 {{ .Date.Format "January 2, 2006" }} 📖 {{ .ReadingTime }} min
         {{ with .Params.tags }}
         • Tags: {{ delimit . ", " }}
         {{ end }}

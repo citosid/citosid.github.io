@@ -9,7 +9,7 @@
     <div class="post">
         <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <div class="post-meta">
-            Posted on {{ .Date.Format "2006-01-02" }} • {{ .ReadingTime }} min read
+            📆 {{ .Date.Format "January 2, 2006" }} 📖 {{ .ReadingTime }} min
             {{ with .Params.tags }}
             • Tags: {{ delimit . ", " }}
             {{ end }}
