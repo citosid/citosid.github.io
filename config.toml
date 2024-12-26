@@ -12,7 +12,8 @@ title = 'abrahamsustaita.com'
 
 [markup]
   [markup.highlight]
-    style = "monokai"
     lineNos = true
     lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
     tabWidth = 4

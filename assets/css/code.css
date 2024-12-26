@@ -1,5 +1,6 @@
 /* Hugo syntax highlighting overrides */
 .highlight {
+  background: var(--base) !important;
   background-color: var(--base) !important;
   padding: 1rem;
   border-radius: 5px;
@@ -31,4 +32,242 @@ code {
   padding: 0.2em 0.4em;
   border-radius: 3px;
   color: var(--rose);
+}
+
+/* Rosé Pine Moon syntax highlighting */
+.chroma {
+  color: var(--text);
+}
+.chroma .err {
+  color: var(--love);
+}
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.chroma .hl {
+  background-color: var(--overlay);
+}
+.chroma .lnt {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+}
+.chroma .ln {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+}
+.chroma .k {
+  color: var(--iris);
+}
+.chroma .kc {
+  color: var(--iris);
+}
+.chroma .kd {
+  color: var(--iris);
+}
+.chroma .kn {
+  color: var(--pine);
+}
+.chroma .kp {
+  color: var(--iris);
+}
+.chroma .kr {
+  color: var(--iris);
+}
+.chroma .kt {
+  color: var(--gold);
+}
+.chroma .na {
+  color: var(--rose);
+}
+.chroma .nb {
+  color: var(--text);
+}
+.chroma .bp {
+  color: var(--text);
+}
+.chroma .nc {
+  color: var(--gold);
+}
+.chroma .no {
+  color: var(--love);
+}
+.chroma .nd {
+  color: var(--pine);
+}
+.chroma .ni {
+  color: var(--text);
+}
+.chroma .ne {
+  color: var(--love);
+}
+.chroma .nf {
+  color: var(--rose);
+}
+.chroma .fm {
+  color: var(--rose);
+}
+.chroma .nl {
+  color: var(--text);
+}
+.chroma .nn {
+  color: var(--gold);
+}
+.chroma .nx {
+  color: var(--rose);
+}
+.chroma .py {
+  color: var(--text);
+}
+.chroma .nt {
+  color: var(--pine);
+}
+.chroma .nv {
+  color: var(--love);
+}
+.chroma .vc {
+  color: var(--love);
+}
+.chroma .vg {
+  color: var(--love);
+}
+.chroma .vi {
+  color: var(--love);
+}
+.chroma .vm {
+  color: var(--love);
+}
+.chroma .s {
+  color: var(--foam);
+}
+.chroma .sa {
+  color: var(--foam);
+}
+.chroma .sb {
+  color: var(--foam);
+}
+.chroma .sc {
+  color: var(--foam);
+}
+.chroma .dl {
+  color: var(--foam);
+}
+.chroma .sd {
+  color: var(--muted);
+}
+.chroma .s2 {
+  color: var(--foam);
+}
+.chroma .se {
+  color: var(--gold);
+}
+.chroma .sh {
+  color: var(--foam);
+}
+.chroma .si {
+  color: var(--gold);
+}
+.chroma .sx {
+  color: var(--foam);
+}
+.chroma .sr {
+  color: var(--foam);
+}
+.chroma .s1 {
+  color: var(--foam);
+}
+.chroma .ss {
+  color: var(--foam);
+}
+.chroma .m {
+  color: var(--gold);
+}
+.chroma .mb {
+  color: var(--gold);
+}
+.chroma .mf {
+  color: var(--gold);
+}
+.chroma .mh {
+  color: var(--gold);
+}
+.chroma .mi {
+  color: var(--gold);
+}
+.chroma .il {
+  color: var(--gold);
+}
+.chroma .mo {
+  color: var(--gold);
+}
+.chroma .o {
+  color: var(--pine);
+}
+.chroma .ow {
+  color: var(--pine);
+}
+.chroma .c {
+  color: var(--muted);
+}
+.chroma .ch {
+  color: var(--muted);
+}
+.chroma .cm {
+  color: var(--muted);
+}
+.chroma .c1 {
+  color: var(--muted);
+}
+.chroma .cs {
+  color: var(--muted);
+}
+.chroma .cp {
+  color: var(--muted);
+}
+.chroma .cpf {
+  color: var(--muted);
+}
+.chroma .gd {
+  color: var(--love);
+}
+.chroma .ge {
+  font-style: italic;
+}
+.chroma .gr {
+  color: var(--love);
+}
+.chroma .gh {
+  color: var(--text);
+}
+.chroma .gi {
+  color: var(--foam);
+}
+.chroma .go {
+  color: var(--muted);
+}
+.chroma .gp {
+  color: var(--muted);
+}
+.chroma .gs {
+  font-weight: bold;
+}
+.chroma .gu {
+  color: var(--muted);
+}
+.chroma .gt {
+  color: var(--love);
+}
+.chroma .gl {
+  text-decoration: underline;
+}
+.chroma .w {
+  color: var(--text);
 }
