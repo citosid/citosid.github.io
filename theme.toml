@@ -1,0 +1,12 @@
+name = "Terminal Blog"
+license = "MIT"
+licenselink = "https://github.com/yourusername/hugo-terminal-theme/blob/master/LICENSE"
+description = "A minimal, terminal-style theme for technical blogs"
+homepage = "https://github.com/yourusername/hugo-terminal-theme"
+tags = ["blog", "minimal", "dark", "terminal", "technical"]
+features = ["syntax highlighting", "responsive"]
+min_version = "0.80.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://your-website.com"

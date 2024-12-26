@@ -1,0 +1,31 @@
+{{ $image := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $loading := .Get "loading" | default "lazy" }}
+
+<figure class="terminal-image">
+    <div class="image-frame">
+        <div class="image-header">
+            <span class="window-button close"></span>
+            <span class="window-button minimize"></span>
+            <span class="window-button maximize"></span>
+            <span class="image-title">{{ $alt }}</span>
+        </div>
+        {{ with $image }}
+            {{ $small := .Resize "800x" }}
+            {{ $tiny := .Resize "80x" }}
+            <img
+                src="{{ $small.RelPermalink }}"
+                alt="{{ $alt }}"
+                loading="{{ $loading }}"
+                class="terminal-img"
+                style="background-image: url({{ $tiny.RelPermalink }});"
+            >
+        {{ end }}
+    </div>
+    {{ with $caption }}
+    <figcaption class="image-caption">
+        <span class="prompt">$</span> echo "{{ . }}"
+    </figcaption>
+    {{ end }}
+</figure>

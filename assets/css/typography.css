@@ -1,0 +1,83 @@
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--iris);
+  margin: 1.5rem 0 1rem 0;
+}
+
+/* Responsive typography */
+h1 {
+  font-size: 2.25rem;
+}
+h2 {
+  font-size: 1.85rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.65rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+  h4 {
+    font-size: 1.15rem;
+  }
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+/* Links */
+a {
+  color: var(--foam);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--rose);
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 3px solid var(--pine);
+  background-color: var(--overlay);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+p,
+ul,
+ol {
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+}

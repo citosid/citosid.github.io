@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ $variables := resources.Get "css/variables.css" }}
+    {{ $base := resources.Get "css/base.css" }}
+    {{ $terminal := resources.Get "css/terminal.css" }}
+    {{ $typography := resources.Get "css/typography.css" }}
+    {{ $posts := resources.Get "css/posts.css" }}
+    {{ $code := resources.Get "css/code.css" }}
+    {{ $tables := resources.Get "css/tables.css" }}
+    {{ $images := resources.Get "css/images.css" }}
+    
+    {{ $css := slice $variables $base $terminal $typography $posts $code $tables $images | resources.Concat "css/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+    {{ with .Site.Params.favicon }}
+    <link rel="icon" type="image/x-icon" href="{{ . | relURL }}">
+    {{ end }}
+</head>
+<body>
+    <div id="terminal">
+        <div class="window-header">
+            <div class="window-button close"></div>
+            <div class="window-button minimize"></div>
+            <div class="window-button maximize"></div>
+        </div>
+        <div class="terminal-content">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
+</body>
+</html>

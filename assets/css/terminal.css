@@ -1,0 +1,83 @@
+#terminal {
+  width: 95%;
+  max-width: 1200px; /* Increased from 900px */
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: var(--surface);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #terminal {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  body {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  #terminal {
+    max-width: 1400px;
+  }
+}
+
+.window-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--overlay);
+}
+
+.window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.close {
+  background-color: var(--love);
+}
+.minimize {
+  background-color: var(--gold);
+}
+.maximize {
+  background-color: var(--foam);
+}
+
+.prompt {
+  color: var(--pine);
+  margin-right: 0.5rem;
+}
+
+.command {
+  color: var(--iris);
+  margin-bottom: 1rem;
+}
+
+.output {
+  margin-bottom: 2rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background-color: var(--rose);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 0.2em;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,11 +1,18 @@
 baseURL = 'https://abrahamsustaita.com/'
 languageCode = 'en-us'
-title = 'abe@blinkin $'
+title = 'abrahamsustaita.com'
 
-theme = 'terminal'
-
-[Params]
+[params]
   contentTypeName = "posts"
+  description = "A terminal-style technical blog"
   enableGitInfo = true
+  favicon = "favicon.ico"
   fullWidthTheme = true
   showLastUpdated = false
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4

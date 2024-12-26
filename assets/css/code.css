@@ -1,0 +1,34 @@
+/* Hugo syntax highlighting overrides */
+.highlight {
+  background-color: var(--base) !important;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border: 1px solid var(--overlay);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .highlight {
+    padding: 0.75rem;
+    font-size: 0.9em;
+  }
+}
+
+.highlight pre {
+  margin: 0;
+}
+
+.highlight code {
+  background: none;
+  padding: 0;
+}
+
+/* Inline code */
+code {
+  background-color: var(--base);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: var(--rose);
+}

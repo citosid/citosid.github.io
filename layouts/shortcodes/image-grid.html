@@ -1,0 +1,23 @@
+<div class="image-grid">
+    {{ range split (.Get "images") "," }}
+    {{ $image := $.Page.Resources.GetMatch (printf "*%s*" (trim . " ")) }}
+    {{ with $image }}
+        {{ $thumb := .Resize "400x" }}
+        <figure class="terminal-image">
+            <div class="image-frame">
+                <div class="image-header">
+                    <span class="window-button close"></span>
+                    <span class="window-button minimize"></span>
+                    <span class="window-button maximize"></span>
+                </div>
+                <img
+                    src="{{ $thumb.RelPermalink }}"
+                    alt="{{ .Title }}"
+                    loading="lazy"
+                    class="terminal-img"
+                >
+            </div>
+        </figure>
+    {{ end }}
+    {{ end }}
+</div>

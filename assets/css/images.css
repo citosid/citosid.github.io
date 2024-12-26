@@ -1,0 +1,82 @@
+.terminal-image {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.image-frame {
+  background-color: var(--surface);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--overlay);
+}
+
+.image-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: var(--overlay);
+  border-bottom: 1px solid var(--overlay);
+}
+
+.image-title {
+  color: var(--subtle);
+  font-size: 0.9em;
+  margin-left: 1rem;
+}
+
+.terminal-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0.97);
+  transition: filter 0.3s ease;
+  animation: imageLoad 0.3s ease-in;
+}
+
+.terminal-img:hover {
+  filter: brightness(1);
+}
+
+.image-caption {
+  margin-top: 0.5rem;
+  color: var(--subtle);
+  font-size: 0.9em;
+  padding: 0.5rem;
+}
+
+.image-caption .prompt {
+  color: var(--pine);
+  margin-right: 0.5rem;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes imageLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", monospace;
+}
+
+body {
+  background-color: var(--base);
+  color: var(--text);
+  line-height: 1.5;
+  padding: 1.5rem;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+::selection {
+  background-color: var(--iris);
+  color: var(--base);
+}
+
+@media (min-width: 1400px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0.75rem;
+    font-size: 15px;
+  }
+}

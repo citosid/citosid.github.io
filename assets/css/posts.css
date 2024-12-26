@@ -1,0 +1,39 @@
+.post {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.post-title {
+  color: var(--foam);
+  margin-bottom: 0.5rem;
+}
+
+.post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  text-decoration: underline;
+  color: var(--rose);
+}
+
+.post-meta {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+}
+
+.post-content {
+  max-width: 100%;
+  padding: 1rem;
+}
+
+/* Improve content readability on larger screens */
+@media (min-width: 768px) {
+  .post {
+    padding: 2rem;
+  }
+}
