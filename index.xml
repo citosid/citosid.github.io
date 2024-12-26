@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>abrahamsustaita.com</title><link>https://abrahamsustaita.com/</link><description>Recent content on abrahamsustaita.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 25 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://abrahamsustaita.com/index.xml" rel="self" type="application/rss+xml"/><item><title>WezTerm Configuration</title><link>https://abrahamsustaita.com/terminal/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate><guid>https://abrahamsustaita.com/terminal/</guid><description>&lt;p>In this post I&amp;rsquo;ll add my configuration for WezTerm. At the end, it will look like this:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>abrahamsustaita.com</title><link>https://abrahamsustaita.com/</link><description>Recent content on abrahamsustaita.com</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 25 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://abrahamsustaita.com/index.xml" rel="self" type="application/rss+xml"/><item><title>WezTerm Configuration 1: Projects Selector</title><link>https://abrahamsustaita.com/wezterm.projects/</link><pubDate>Wed, 25 Dec 2024 00:00:00 +0000</pubDate><guid>https://abrahamsustaita.com/wezterm.projects/</guid><description>&lt;p>In this post I&amp;rsquo;ll add my configuration for WezTerm. At the end, it will look like this:&lt;/p>
 
 
 
@@ -12,16 +12,6 @@
  &lt;span class="window-button maximize">&lt;/span>
  &lt;span class="image-title">WezTerm&lt;/span>
  &lt;/div>
- 
- 
- 
- &lt;img
- src="https://abrahamsustaita.com/terminal/wezterm_hu2499545642803733613.png"
- alt="WezTerm"
- loading="lazy"
- class="terminal-img"
- style="background-image: url(/terminal/wezterm_hu2492357052233697420.png);"
- >
  
  &lt;/div>
  
@@ -61,4 +51,4 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;/div>&lt;p>With this configuration, now you&amp;rsquo;ll be able to type &lt;code>CTRL + a&lt;/code> then &lt;code>p&lt;/code> and it will&amp;hellip; not do nothing.&lt;/p></description></item></channel></rss>
