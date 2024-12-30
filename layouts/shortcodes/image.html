@@ -11,17 +11,13 @@
             <span class="window-button maximize"></span>
             <span class="image-title">{{ $alt }}</span>
         </div>
-        {{ with $image }}
-            {{ $small := .Resize "800x" }}
-            {{ $tiny := .Resize "80x" }}
+
             <img
-                src="{{ $small.RelPermalink }}"
+                src="/img/{{ .Get "src" }}"
                 alt="{{ $alt }}"
                 loading="{{ $loading }}"
                 class="terminal-img"
-                style="background-image: url({{ $tiny.RelPermalink }});"
             >
-        {{ end }}
     </div>
     {{ with $caption }}
     <figcaption class="image-caption">
