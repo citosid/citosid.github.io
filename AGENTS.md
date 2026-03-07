@@ -54,7 +54,7 @@ considered complete.
 
 ### CSS Conventions
 
-- One module per concern (8 modules total).
+- One module per concern (9 modules total).
 - All colors MUST use CSS custom properties from `variables.css`. The
   agent MUST NOT use raw hex color values because they bypass the
   design token system and break theme consistency.
@@ -77,6 +77,15 @@ The agent MUST commit directly to `main`. The agent MUST NOT create
 feature branches because this is a personal project with a single
 contributor, and branches add unnecessary overhead. If the user
 explicitly requests a branch, the agent MAY create one.
+
+Commit messages SHOULD follow conventional commit format:
+
+- `feat:` for new features
+- `fix:` for bug fixes
+- `docs:` for documentation changes
+- `style:` for formatting changes
+- `refactor:` for code refactoring
+- `chore:` for maintenance tasks
 
 ## Shortcode Reference
 
@@ -132,7 +141,7 @@ Default theme is Rosé Pine Moon. 13 themes available via dropdown switcher.
 | `package.json` | PostCSS dependencies |
 | `postcss.config.js` | PostCSS config (Autoprefixer) |
 | `archetypes/default.md` | New content template |
-| `assets/css/` | Source CSS modules (8 files) |
+| `assets/css/` | Source CSS modules (9 files) |
 | `assets/css/variables.css` | 13 theme palettes as CSS custom properties |
 | `assets/css/main.css` | CSS module imports |
 | `assets/js/theme-init.js` | Blocking theme init script (prevents FOUC) |
@@ -163,10 +172,39 @@ Before declaring a task complete, the agent MUST verify:
 For architecture, data models, workflows, and component details,
 see `.sop/summary/index.md` which indexes:
 
-- `architecture.md` — system design and patterns
-- `components.md` — template and CSS module details
-- `interfaces.md` — APIs, config schema, deployment interface
-- `data_models.md` — front matter, config model, design tokens
-- `workflows.md` — step-by-step guides for common tasks
-- `dependencies.md` — full dependency inventory
-- `review_notes.md` — documentation quality findings
+- `codebase_info.md` — project overview, structure, and technology stack
+- `architecture.md` — system design, patterns, and architectural decisions
+- `components.md` — template, CSS, and JavaScript component details
+- `interfaces.md` — APIs, config schemas, shortcodes, and deployment interfaces
+- `data_models.md` — front matter, config models, design tokens, and state management
+- `workflows.md` — step-by-step guides for common development tasks
+- `dependencies.md` — comprehensive dependency inventory and management
+- `review_notes.md` — documentation quality assessment and improvement recommendations
+
+### Using the Documentation
+
+**For AI Assistants:**
+
+Start with `.sop/summary/index.md` as your primary context file. It contains:
+
+- Quick navigation strategy for finding relevant information
+- Detailed summaries of each documentation file
+- Common question patterns mapped to documentation files
+- Documentation relationships and cross-references
+
+The index is designed to help you locate specific information without loading all documentation files into context simultaneously.
+
+**Quick Reference:**
+
+- **"How do I...?"** → `workflows.md`
+- **"What is...?"** → `codebase_info.md` or `components.md`
+- **"Where is...?"** → `codebase_info.md`
+- **"Why does...?"** → `architecture.md`
+- **"How does...work?"** → `architecture.md` or `components.md`
+
+### Documentation Coverage
+
+- **Total Documentation:** 8 files + 1 index (~25,000 words)
+- **Coverage:** 90% (see `review_notes.md` for gaps)
+- **Last Updated:** 2026-03-07
+- **Format:** Markdown with Mermaid diagrams (no ASCII art)
