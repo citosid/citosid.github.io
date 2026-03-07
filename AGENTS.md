@@ -96,22 +96,24 @@ Renders image in terminal-style frame. `src` resolves from `/img/`.
 
 Responsive grid with auto-resized 400px thumbnails.
 
-## Color Palette (Rosé Pine Moon)
+## Color Palette
 
-| Variable | Hex | Use |
+Default theme is Rosé Pine Moon. 13 themes available via dropdown switcher.
+
+| Variable | Default (rose-pine) | Use |
 | --- | --- | --- |
 | `--base` | `#232136` | Page background |
-| `--surface` | `#2a273f` | Terminal container |
-| `--overlay` | `#393552` | Borders, highlights |
+| `--surface` | `#2a273f` | Elevated backgrounds |
+| `--overlay` | `#6e6a86` | Borders, highlights |
 | `--text` | `#e0def4` | Body text |
 | `--subtle` | `#908caa` | Secondary text |
 | `--muted` | `#6e6a86` | Muted text |
-| `--love` | `#eb6f92` | Errors, close button |
+| `--love` | `#eb6f92` | Errors, red accent |
 | `--gold` | `#f6c177` | Warnings, types |
 | `--rose` | `#ea9a97` | Hover, inline code |
 | `--pine` | `#3e8fb0` | Prompts, operators |
 | `--foam` | `#9ccfd8` | Links, strings |
-| `--iris` | `#c4a7e7` | Headings, keywords |
+| `--iris` | `#c4a7e7` | Headings, keywords, phosphor glow |
 
 ## Adding New CSS Modules
 
@@ -131,10 +133,12 @@ Responsive grid with auto-resized 400px thumbnails.
 | `postcss.config.js` | PostCSS config (Autoprefixer) |
 | `archetypes/default.md` | New content template |
 | `assets/css/` | Source CSS modules (8 files) |
-| `assets/css/variables.css` | Rosé Pine Moon color tokens |
+| `assets/css/variables.css` | 13 theme palettes as CSS custom properties |
 | `assets/css/main.css` | CSS module imports |
+| `assets/js/theme-init.js` | Blocking theme init script (prevents FOUC) |
+| `assets/js/theme-switcher.js` | Theme dropdown UI handler |
 | `content/` | Markdown blog posts |
-| `layouts/_default/baseof.html` | Root template (CSS pipeline, terminal chrome) |
+| `layouts/_default/baseof.html` | Root template (JS, CSS pipeline, header, footer) |
 | `layouts/_default/single.html` | Single post view |
 | `layouts/_default/list.html` | Section listing view |
 | `layouts/taxonomy/tags.html` | All tags listing |

@@ -66,22 +66,63 @@ classDiagram
 
 ## CSS Custom Properties Model
 
-The design token system in `variables.css`:
+The design token system in `variables.css`. Default theme (rose-pine) is defined in `:root`, with 12 additional themes as `[data-theme]` attribute selectors.
+
+### Theme Switching
+
+Themes are applied via `data-theme` attribute on `<html>`:
+
+```html
+<html data-theme="tron-ares">
+```
+
+When no attribute is set, `:root` values apply (rose-pine default).
+
+### Color Token Schema
+
+All 13 themes use the same 12 custom properties:
 
 | Token | Category | Semantic Use |
 |---|---|---|
 | `--base` | Background | Page background |
-| `--surface` | Background | Elevated surfaces (terminal container) |
+| `--surface` | Background | Elevated surfaces |
 | `--overlay` | Background | Borders, table headers, highlights |
 | `--text` | Foreground | Primary body text |
 | `--subtle` | Foreground | Secondary/caption text |
 | `--muted` | Foreground | Tertiary text, code comments |
-| `--love` | Accent | Errors, close button, deletions |
-| `--gold` | Accent | Warnings, minimize button, types |
+| `--love` | Accent | Errors, red accent |
+| `--gold` | Accent | Warnings, yellow accent, types |
 | `--rose` | Accent | Hover states, inline code, attributes |
 | `--pine` | Accent | Prompts, operators, blockquote borders |
-| `--foam` | Accent | Links, maximize button, strings |
-| `--iris` | Accent | Headings, keywords, selection |
+| `--foam` | Accent | Links, strings |
+| `--iris` | Accent | Headings, keywords, selection, phosphor glow |
+
+### Available Themes
+
+13 themes ported from dotfiles kitty configs:
+
+- rose-pine (default)
+- catppuccin-mocha
+- catppuccin-frappe
+- prism
+- crystals
+- tron-ares
+- enterprise-desert
+- ai-machine
+- ai-flower
+- aurora
+- headphones
+- fantasy-autumn
+- color-wall
+
+### localStorage Schema
+
+```
+Key:   "theme"
+Value: "rose-pine" | "catppuccin-mocha" | ... (theme name string)
+```
+
+If key is absent, default theme (rose-pine) applies.
 
 ## Archetype Template
 
