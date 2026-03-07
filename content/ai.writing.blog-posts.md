@@ -1,6 +1,6 @@
 ---
 title: "Using AI to Write Blog Posts About Using AI"
-date: 2026-03-07
+date: 2026-03-07T13:00:00-05:00
 draft: false
 tags: ["ai", "writing", "workflow", "meta"]
 ---
