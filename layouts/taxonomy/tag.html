@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="command-line">
+    <span class="prompt">me@{{ .Site.Title | lower }}:~$</span>
+    <span class="command">ls tags/{{ .Title | lower }}/</span>
+</div>
+
+<div class="output">
+    {{ range .Pages }}
+    <div class="post">
+        <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <div class="post-meta">
+            📆 {{ .Date.Format "January 2, 2006" }} 📖 {{ .ReadingTime }} min
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}
