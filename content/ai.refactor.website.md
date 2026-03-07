@@ -1,7 +1,7 @@
 ---
 title: "Refactoring My Website with AI"
 date: 2026-03-07
-draft: true
+draft: false
 tags: ["ai", "hugo", "css", "workflow"]
 ---
 
