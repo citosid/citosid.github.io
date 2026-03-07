@@ -14,7 +14,7 @@
   --iris: #c4a7e7;
 }
 
-[data-theme="rose-pine"] {
+:root[data-theme="rose-pine"] {
   --base: #1e1e2b;
   --surface: #252535;
   --overlay: #6e6a86;
@@ -29,7 +29,7 @@
   --iris: #c4a7e7;
 }
 
-[data-theme="catppuccin-mocha"] {
+:root[data-theme="catppuccin-mocha"] {
   --base: #1e1e2e;
   --surface: #181825;
   --overlay: #585b70;
@@ -44,7 +44,7 @@
   --iris: #f5c2e7;
 }
 
-[data-theme="catppuccin-frappe"] {
+:root[data-theme="catppuccin-frappe"] {
   --base: #303446;
   --surface: #292c3c;
   --overlay: #626880;
@@ -59,7 +59,7 @@
   --iris: #f4b8e4;
 }
 
-[data-theme="prism"] {
+:root[data-theme="prism"] {
   --base: #0d0f11;
   --surface: #1a1e22;
   --overlay: #4a6a8a;
@@ -74,7 +74,7 @@
   --iris: #852c6b;
 }
 
-[data-theme="crystals"] {
+:root[data-theme="crystals"] {
   --base: #0d1011;
   --surface: #1a2022;
   --overlay: #4a6a8a;
@@ -89,7 +89,7 @@
   --iris: #a13bb1;
 }
 
-[data-theme="tron-ares"] {
+:root[data-theme="tron-ares"] {
   --base: #0d0e11;
   --surface: #1a1d22;
   --overlay: #4a6a8a;
@@ -104,7 +104,7 @@
   --iris: #c44a8a;
 }
 
-[data-theme="enterprise-desert"] {
+:root[data-theme="enterprise-desert"] {
   --base: #0d0e11;
   --surface: #1a1d22;
   --overlay: #4a6a8a;
@@ -119,7 +119,7 @@
   --iris: #c44a8a;
 }
 
-[data-theme="ai-machine"] {
+:root[data-theme="ai-machine"] {
   --base: #0d0e11;
   --surface: #1a1d22;
   --overlay: #4a6a8a;
@@ -134,7 +134,7 @@
   --iris: #c44a8a;
 }
 
-[data-theme="ai-flower"] {
+:root[data-theme="ai-flower"] {
   --base: #0d1011;
   --surface: #1a2022;
   --overlay: #4a6a8a;
@@ -149,7 +149,7 @@
   --iris: #c5518e;
 }
 
-[data-theme="aurora"] {
+:root[data-theme="aurora"] {
   --base: #071417;
   --surface: #142225;
   --overlay: #496972;
@@ -164,7 +164,7 @@
   --iris: #8994f4;
 }
 
-[data-theme="headphones"] {
+:root[data-theme="headphones"] {
   --base: #071418;
   --surface: #142226;
   --overlay: #496973;
@@ -179,7 +179,7 @@
   --iris: #8e93f3;
 }
 
-[data-theme="fantasy-autumn"] {
+:root[data-theme="fantasy-autumn"] {
   --base: #0f111b;
   --surface: #1c1f29;
   --overlay: #4d6777;
@@ -194,7 +194,7 @@
   --iris: #ae88e7;
 }
 
-[data-theme="color-wall"] {
+:root[data-theme="color-wall"] {
   --base: #09131a;
   --surface: #172128;
   --overlay: #4b6875;
