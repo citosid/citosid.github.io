@@ -66,9 +66,9 @@ The macOS window chrome was replaced with a simple header/footer structure. The 
 
 ### Code Block Refactor
 
-This was the most iterative part. The original code blocks used Hugo's table-based line numbers (`lineNumbersInTable = true`), which wraps code in a two-column `<table>`. Styling highlights across the table gap was painful — the highlight background only covered each `<td>` independently, leaving an unhighlighted seam between the line numbers and code.
+This was the most iterative part. The original code blocks used Hugo's table-based line numbers (`lineNos = "table"`), which wraps code in a two-column `<table>`. Styling highlights across the table gap was painful — the highlight background only covered each `<td>` independently, leaving an unhighlighted seam between the line numbers and code.
 
-We switched to `lineNumbersInTable = false`, which renders line numbers as inline `<span>` elements next to the code. Much simpler DOM, much easier to style.
+We switched to `lineNos = "inline"`, which renders line numbers as inline `<span>` elements next to the code. Much simpler DOM, much easier to style.
 
 Getting full-width highlight stripes on inline spans was tricky. `display: inline-block` with `width: 100%` collapsed all lines into one. The solution was a negative margin/padding trick:
 
@@ -111,7 +111,7 @@ I ran the site through a UI audit focused on removing default AI-generated aesth
 
 3. **Audit existing code before adding new code.** The Uncodixfy audit found dead CSS, dead markup, and wrong color tokens that had been there since the original build. Cleaning those up first made the new work cleaner.
 
-4. **Hugo's line number table layout is a trap.** If you need to style highlighted lines in Hugo code blocks, use `lineNumbersInTable = false` from the start. The table layout makes cross-column styling nearly impossible without hacks.
+4. **Hugo's line number table layout is a trap.** If you need to style highlighted lines in Hugo code blocks, use `lineNos = "inline"` from the start. The table layout makes cross-column styling nearly impossible without hacks.
 
 5. **Watch out for accidental AI aesthetics in your own choices.** After reading about AI slop's signature purple gradients, I realized my headings were all `--iris` (purple) across every theme. It was a real design token from Rosé Pine, not an AI default — but it still read as "generic AI site" to fresh eyes. Switching headings to `--gold` gave the site a warmer, more distinctive feel and broke the association.
 
