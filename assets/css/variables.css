@@ -1,5 +1,20 @@
 :root {
-  /* Rosé Pine Moon (default) — base/surface desaturated for cleaner bg */
+  /* Fallback — matches rose-pine */
+  --base: #1e1e2b;
+  --surface: #252535;
+  --overlay: #6e6a86;
+  --text: #e0def4;
+  --subtle: #908caa;
+  --muted: #6e6a86;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ea9a97;
+  --pine: #3e8fb0;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
+}
+
+[data-theme="rose-pine"] {
   --base: #1e1e2b;
   --surface: #252535;
   --overlay: #6e6a86;

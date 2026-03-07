@@ -1,10 +1,8 @@
 (function() {
   try {
-    const theme = localStorage.getItem('theme');
-    if (theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
+    var theme = localStorage.getItem('theme') || 'rose-pine';
+    document.documentElement.setAttribute('data-theme', theme);
   } catch (e) {
-    // localStorage unavailable, use default theme
+    document.documentElement.setAttribute('data-theme', 'rose-pine');
   }
 })();
