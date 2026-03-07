@@ -1,55 +1,63 @@
 #terminal {
-  width: 95%;
-  max-width: 1200px; /* Increased from 900px */
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem;
-  background-color: var(--surface);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #terminal {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  body {
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 1400px) {
-  #terminal {
-    max-width: 1400px;
-  }
-}
-
-.window-header {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--overlay);
 }
 
-.window-button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 6px;
+.site-title {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.close {
-  background-color: var(--love);
+.site-title:hover {
+  color: var(--foam);
 }
-.minimize {
-  background-color: var(--gold);
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
 }
-.maximize {
-  background-color: var(--foam);
+
+.site-nav a {
+  color: var(--pine);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--foam);
+}
+
+#theme-select {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--overlay);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.terminal-content {
+  flex: 1;
+  padding: 2rem 1.5rem;
+}
+
+.site-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--overlay);
+  color: var(--subtle);
 }
 
 .prompt {
@@ -57,27 +65,24 @@
   margin-right: 0.5rem;
 }
 
-.command {
-  color: var(--iris);
-  margin-bottom: 1rem;
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+  }
+
+  .terminal-content {
+    padding: 1.5rem 1rem;
+  }
 }
 
-.output {
-  margin-bottom: 2rem;
-}
-
-.cursor {
-  display: inline-block;
-  width: 0.6em;
-  height: 1.2em;
-  background-color: var(--rose);
-  animation: blink 1s step-end infinite;
-  vertical-align: middle;
-  margin-left: 0.2em;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
+@media (min-width: 1400px) {
+  #terminal {
+    max-width: 1400px;
   }
 }

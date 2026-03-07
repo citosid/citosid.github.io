@@ -9,7 +9,6 @@ body {
   background-color: var(--base);
   color: var(--text);
   line-height: 1.5;
-  padding: 1.5rem;
   min-height: 100vh;
   font-size: 16px;
 }
@@ -27,7 +26,6 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding: 0.75rem;
     font-size: 15px;
   }
 }

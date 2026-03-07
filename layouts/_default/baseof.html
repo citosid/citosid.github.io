@@ -26,14 +26,35 @@
 </head>
 <body>
     <div id="terminal">
-        <div class="window-header">
-            <div class="window-button close"></div>
-            <div class="window-button minimize"></div>
-            <div class="window-button maximize"></div>
-        </div>
-        <div class="terminal-content">
+        <header class="site-header">
+            <a href="/" class="site-title">abrahamsustaita.com</a>
+            <nav class="site-nav">
+                <a href="/">~/home</a>
+                <a href="/tags">~/tags</a>
+                <select id="theme-select">
+                    <option value="">~/theme</option>
+                    <option value="rose-pine">rose-pine</option>
+                    <option value="catppuccin-mocha">catppuccin-mocha</option>
+                    <option value="catppuccin-frappe">catppuccin-frappe</option>
+                    <option value="prism">prism</option>
+                    <option value="crystals">crystals</option>
+                    <option value="tron-ares">tron-ares</option>
+                    <option value="enterprise-desert">enterprise-desert</option>
+                    <option value="ai-machine">ai-machine</option>
+                    <option value="ai-flower">ai-flower</option>
+                    <option value="aurora">aurora</option>
+                    <option value="headphones">headphones</option>
+                    <option value="fantasy-autumn">fantasy-autumn</option>
+                    <option value="color-wall">color-wall</option>
+                </select>
+            </nav>
+        </header>
+        <main class="terminal-content">
             {{ block "main" . }}{{ end }}
-        </div>
+        </main>
+        <footer class="site-footer">
+            <span class="prompt">visitor@abrahamsustaita.com:~$</span> echo © {{ now.Year }} Abraham Sustaita
+        </footer>
     </div>
 </body>
 </html>
