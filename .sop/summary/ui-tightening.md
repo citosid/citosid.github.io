@@ -71,3 +71,13 @@ patterns found. Terminal blog concept is a genuine design decision.
 - `th` used `background-color: var(--overlay)` (#6e6a86)
 - Too prominent against `--base` background
 - Fixed: changed to `var(--surface)` for subtler differentiation
+
+### Code blocks felt clunky (code.css)
+- Background was `var(--base)` with `!important` — same as page, only
+  the border distinguished the block from surrounding content
+- Line numbers had no visual separation from code (no border, no color)
+- Padding was on `.highlight` wrapper instead of `pre`, causing the
+  table layout to have awkward spacing
+- Fixed: background to `--surface`, line numbers `--muted` with
+  `border-right`, padding moved to `pre`, removed `!important`,
+  added `user-select: none` on line numbers
