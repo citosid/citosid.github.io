@@ -1,296 +1,151 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>abrahamsustaita.com</title><script>(function(){try{var e=localStorage.getItem("theme")||"rose-pine";document.documentElement.setAttribute("data-theme",e)}catch{document.documentElement.setAttribute("data-theme","rose-pine")}})()</script><link rel=stylesheet href=/css/style.min.bbaf2a3ac224e5b4713096955f5d716f4dc9347c13673d9762a53f341ccfee39.css integrity="sha256-u68qOsIk5bRxMJaVX11xb03JNHwTZz2XYqU/NBzP7jk="><link rel=icon type=image/x-icon href=/favicon.ico><script src=/js/theme-switcher.min.89d2460f992dd652eac7519352ecb3078a19b7a554c5fb3ee8e9c87aef496e75.js defer></script></head><body><div id=terminal><header class=site-header><a href=/ class=site-title>abrahamsustaita.com</a><nav class=site-nav><a href=/>~/home</a>
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>abrahamsustaita.com</title><script>(function(){try{var e=localStorage.getItem("theme")||"rose-pine";document.documentElement.setAttribute("data-theme",e)}catch{document.documentElement.setAttribute("data-theme","rose-pine")}})()</script><link rel=stylesheet href=/css/style.min.2cea30d53144d7ffc7db35096aa74047b7d478771204da1e67539bbea7d5e02d.css integrity="sha256-LOow1TFE1//H2zUJaqdAR7fUeHcSBNoeZ1ObvqfV4C0="><link rel=icon type=image/x-icon href=/favicon.ico><script src=/js/theme-switcher.min.89d2460f992dd652eac7519352ecb3078a19b7a554c5fb3ee8e9c87aef496e75.js defer></script></head><body><div id=terminal><header class=site-header><a href=/ class=site-title>abrahamsustaita.com</a><nav class=site-nav><a href=/>~/home</a>
 <a href=/tags>~/tags</a>
 <select id=theme-select><option value=rose-pine>rose-pine</option><option value=catppuccin-mocha>catppuccin-mocha</option><option value=catppuccin-frappe>catppuccin-frappe</option><option value=prism>prism</option><option value=crystals>crystals</option><option value=tron-ares>tron-ares</option><option value=enterprise-desert>enterprise-desert</option><option value=ai-machine>ai-machine</option><option value=ai-flower>ai-flower</option><option value=aurora>aurora</option><option value=headphones>headphones</option><option value=fantasy-autumn>fantasy-autumn</option><option value=color-wall>color-wall</option></select></nav></header><main class=terminal-content><article><div class=post-header><h1>WezTerm Configuration 1: Projects Selector</h1><div class=post-meta>December 25, 2024 · 4 min read</div></div><p>In this post I&rsquo;ll add my configuration for WezTerm. At the end, it will look like this:</p><figure class=terminal-image><div class=image-frame><div class=image-header><span class=image-title>WezTerm</span></div><img src=/img/wezterm.png alt=WezTerm loading=lazy class=terminal-img></div></figure><h2 id=setting-up-keybindings>Setting up keybindings</h2><p>The first step is to add a key binding. In our case, it will be <code>LEADER + p</code> where <code>LEADER</code> will be mapped to
-<code>CTRL + a</code>.</p><p>In your <code>.wezterm.lua</code> file add:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-lua data-lang=lua><span class=line><span class=cl><span class=kd>local</span> <span class=n>wezterm</span> <span class=o>=</span> <span class=n>require</span><span class=p>(</span><span class=s2>&#34;wezterm&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=kd>local</span> <span class=n>config</span> <span class=o>=</span> <span class=n>wezterm.config_builder</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>config.leader</span> <span class=o>=</span> <span class=p>{</span> <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;a&#34;</span><span class=p>,</span> <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;CTRL&#34;</span><span class=p>,</span> <span class=n>timeout_milliseconds</span> <span class=o>=</span> <span class=mi>2000</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=n>config.keys</span> <span class=o>=</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;LEADER&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;p&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=n>action</span> <span class=o>=</span> <span class=n>wezterm.action_callback</span><span class=p>(</span><span class=kr>function</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>pane</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=kr>end</span><span class=p>),</span>
-</span></span><span class=line><span class=cl>  <span class=p>},</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>With this configuration, now you&rsquo;ll be able to type <code>CTRL + a</code> then <code>p</code> and it will&mldr; not do nothing.</p><p>In order for this configuration to actually do something, we need more code. Add a new file in the same
-folder where your <code>.wezterm.lua</code> file is located called <code>utils.lua</code>. In this file, add the following code:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
-</span><span class=lnt>  2
-</span><span class=lnt>  3
-</span><span class=lnt>  4
-</span><span class=lnt>  5
-</span><span class=lnt>  6
-</span><span class=lnt>  7
-</span><span class=lnt>  8
-</span><span class=lnt>  9
-</span><span class=lnt> 10
-</span><span class=lnt> 11
-</span><span class=lnt> 12
-</span><span class=lnt> 13
-</span><span class=lnt> 14
-</span><span class=lnt> 15
-</span><span class=lnt> 16
-</span><span class=lnt> 17
-</span><span class=lnt> 18
-</span><span class=lnt> 19
-</span><span class=lnt> 20
-</span><span class=lnt> 21
-</span><span class=lnt> 22
-</span><span class=lnt> 23
-</span><span class=lnt> 24
-</span><span class=lnt> 25
-</span><span class=lnt> 26
-</span><span class=lnt> 27
-</span><span class=lnt> 28
-</span><span class=lnt> 29
-</span><span class=lnt> 30
-</span><span class=lnt> 31
-</span><span class=lnt> 32
-</span><span class=lnt> 33
-</span><span class=lnt> 34
-</span><span class=lnt> 35
-</span><span class=lnt> 36
-</span><span class=lnt> 37
-</span><span class=lnt> 38
-</span><span class=lnt> 39
-</span><span class=lnt> 40
-</span><span class=lnt> 41
-</span><span class=lnt> 42
-</span><span class=lnt> 43
-</span><span class=lnt> 44
-</span><span class=lnt> 45
-</span><span class=lnt> 46
-</span><span class=lnt> 47
-</span><span class=lnt> 48
-</span><span class=lnt> 49
-</span><span class=lnt> 50
-</span><span class=lnt> 51
-</span><span class=lnt> 52
-</span><span class=lnt> 53
-</span><span class=lnt> 54
-</span><span class=lnt> 55
-</span><span class=lnt> 56
-</span><span class=lnt> 57
-</span><span class=lnt> 58
-</span><span class=lnt> 59
-</span><span class=lnt> 60
-</span><span class=lnt> 61
-</span><span class=lnt> 62
-</span><span class=lnt> 63
-</span><span class=lnt> 64
-</span><span class=lnt> 65
-</span><span class=lnt> 66
-</span><span class=lnt> 67
-</span><span class=lnt> 68
-</span><span class=lnt> 69
-</span><span class=lnt> 70
-</span><span class=lnt> 71
-</span><span class=lnt> 72
-</span><span class=lnt> 73
-</span><span class=lnt> 74
-</span><span class=lnt> 75
-</span><span class=lnt> 76
-</span><span class=lnt> 77
-</span><span class=lnt> 78
-</span><span class=lnt> 79
-</span><span class=lnt> 80
-</span><span class=lnt> 81
-</span><span class=lnt> 82
-</span><span class=lnt> 83
-</span><span class=lnt> 84
-</span><span class=lnt> 85
-</span><span class=lnt> 86
-</span><span class=lnt> 87
-</span><span class=lnt> 88
-</span><span class=lnt> 89
-</span><span class=lnt> 90
-</span><span class=lnt> 91
-</span><span class=lnt> 92
-</span><span class=lnt> 93
-</span><span class=lnt> 94
-</span><span class=lnt> 95
-</span><span class=lnt> 96
-</span><span class=lnt> 97
-</span><span class=lnt> 98
-</span><span class=lnt> 99
-</span><span class=lnt>100
-</span><span class=lnt>101
-</span><span class=lnt>102
-</span><span class=lnt>103
-</span><span class=lnt>104
-</span><span class=lnt>105
-</span><span class=lnt>106
-</span><span class=lnt>107
-</span><span class=lnt>108
-</span><span class=lnt>109
-</span><span class=lnt>110
-</span><span class=lnt>111
-</span><span class=lnt>112
-</span><span class=lnt>113
-</span><span class=lnt>114
-</span><span class=lnt>115
-</span><span class=lnt>116
-</span><span class=lnt>117
-</span><span class=lnt>118
-</span><span class=lnt>119
-</span><span class=lnt>120
-</span><span class=lnt>121
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-lua data-lang=lua><span class=line><span class=cl><span class=kd>local</span> <span class=n>M</span> <span class=o>=</span> <span class=p>{}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>M.get_directories</span> <span class=o>=</span> <span class=kr>function</span><span class=p>(</span><span class=n>path</span><span class=p>,</span> <span class=n>level</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>directories</span> <span class=o>=</span> <span class=p>{}</span>
-</span></span><span class=line><span class=cl> <span class=n>level</span> <span class=o>=</span> <span class=n>level</span> <span class=ow>or</span> <span class=mi>0</span>
-</span></span><span class=line><span class=cl> <span class=kr>if</span> <span class=n>level</span> <span class=o>&gt;</span> <span class=mi>1</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>  <span class=kr>return</span> <span class=n>directories</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=c1>-- Use safer path handling</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>sanitized_path</span> <span class=o>=</span> <span class=n>string.gsub</span><span class=p>(</span><span class=n>path</span><span class=p>,</span> <span class=s1>&#39;&#34;&#39;</span><span class=p>,</span> <span class=s1>&#39;</span><span class=se>\\</span><span class=s1>&#34;&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>p</span> <span class=o>=</span> <span class=n>io.popen</span><span class=p>(</span><span class=s1>&#39;find &#34;&#39;</span> <span class=o>..</span> <span class=n>sanitized_path</span> <span class=o>..</span> <span class=s1>&#39;&#34; -maxdepth 1 -mindepth 1 </span><span class=se>\\</span><span class=s1>( -type d -o -type l </span><span class=se>\\</span><span class=s1>)&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>p</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>  <span class=n>wezterm.log_warn</span><span class=p>(</span><span class=s2>&#34;Failed to open directory: &#34;</span> <span class=o>..</span> <span class=n>path</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>  <span class=kr>return</span> <span class=n>directories</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kr>for</span> <span class=n>file</span> <span class=kr>in</span> <span class=n>p</span><span class=p>:</span><span class=n>lines</span><span class=p>()</span> <span class=kr>do</span>
-</span></span><span class=line><span class=cl>  <span class=kd>local</span> <span class=n>dir_name</span> <span class=o>=</span> <span class=n>file</span><span class=p>:</span><span class=n>match</span><span class=p>(</span><span class=s2>&#34;([^/]+)$&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>  <span class=kr>if</span> <span class=n>dir_name</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>   <span class=n>table.insert</span><span class=p>(</span><span class=n>directories</span><span class=p>,</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=n>label</span> <span class=o>=</span> <span class=n>file</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=n>id</span> <span class=o>=</span> <span class=n>dir_name</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>   <span class=p>})</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>   <span class=c1>-- Recursively get subdirectories</span>
-</span></span><span class=line><span class=cl>   <span class=kd>local</span> <span class=n>subdirs</span> <span class=o>=</span> <span class=n>M.get_directories</span><span class=p>(</span><span class=n>file</span><span class=p>,</span> <span class=n>level</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>   <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>subdir</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>subdirs</span><span class=p>)</span> <span class=kr>do</span>
-</span></span><span class=line><span class=cl>    <span class=n>table.insert</span><span class=p>(</span><span class=n>directories</span><span class=p>,</span> <span class=n>subdir</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>   <span class=kr>end</span>
-</span></span><span class=line><span class=cl>  <span class=kr>end</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=n>p</span><span class=p>:</span><span class=n>close</span><span class=p>()</span>
-</span></span><span class=line><span class=cl> <span class=kr>return</span> <span class=n>directories</span>
-</span></span><span class=line><span class=cl><span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>M.open_project</span> <span class=o>=</span> <span class=kr>function</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>_</span><span class=p>,</span> <span class=n>id</span><span class=p>,</span> <span class=n>label</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>mux</span> <span class=o>=</span> <span class=n>wezterm.mux</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>label</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>  <span class=n>wezterm.log_info</span><span class=p>(</span><span class=s2>&#34;Project selection cancelled&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>  <span class=kr>return</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=n>wezterm.emit</span><span class=p>(</span><span class=s2>&#34;tab-changed&#34;</span><span class=p>,</span> <span class=n>window</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>workspace</span> <span class=o>=</span> <span class=n>label</span><span class=p>:</span><span class=n>match</span><span class=p>(</span><span class=s2>&#34;([^/]+)/[^/]+$&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=c1>-- Find existing window for workspace</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>target_window</span> <span class=o>=</span> <span class=kc>nil</span>
-</span></span><span class=line><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>win</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>mux.all_windows</span><span class=p>())</span> <span class=kr>do</span>
-</span></span><span class=line><span class=cl>  <span class=kr>if</span> <span class=n>win</span><span class=p>:</span><span class=n>get_workspace</span><span class=p>()</span> <span class=o>==</span> <span class=n>workspace</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>   <span class=n>target_window</span> <span class=o>=</span> <span class=n>win</span>
-</span></span><span class=line><span class=cl>   <span class=kr>break</span>
-</span></span><span class=line><span class=cl>  <span class=kr>end</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=c1>-- Create new window if needed</span>
-</span></span><span class=line><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>target_window</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>  <span class=kd>local</span> <span class=n>_</span><span class=p>,</span> <span class=n>_</span><span class=p>,</span> <span class=n>new_window</span> <span class=o>=</span> <span class=n>mux.spawn_window</span><span class=p>({</span>
-</span></span><span class=line><span class=cl>   <span class=n>cwd</span> <span class=o>=</span> <span class=n>label</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>   <span class=n>workspace</span> <span class=o>=</span> <span class=n>workspace</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>  <span class=p>})</span>
-</span></span><span class=line><span class=cl>  <span class=n>target_window</span> <span class=o>=</span> <span class=n>new_window</span>
-</span></span><span class=line><span class=cl>  <span class=n>target_window</span><span class=p>:</span><span class=n>set_title</span><span class=p>(</span><span class=n>workspace</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=c1>-- Set title for initial tab</span>
-</span></span><span class=line><span class=cl>  <span class=kd>local</span> <span class=n>tabs</span> <span class=o>=</span> <span class=n>target_window</span><span class=p>:</span><span class=n>tabs</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>  <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>tab</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>tabs</span><span class=p>)</span> <span class=kr>do</span>
-</span></span><span class=line><span class=cl>   <span class=n>tab</span><span class=p>:</span><span class=n>set_title</span><span class=p>(</span><span class=n>id</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>   <span class=n>wezterm.log_info</span><span class=p>(</span><span class=s2>&#34;Created new tab:&#34;</span><span class=p>,</span> <span class=n>tab</span><span class=p>:</span><span class=n>get_title</span><span class=p>())</span>
-</span></span><span class=line><span class=cl>  <span class=kr>end</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=c1>-- Find existing tab or create new one</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>target_tab</span> <span class=o>=</span> <span class=kc>nil</span>
-</span></span><span class=line><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>tab</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>target_window</span><span class=p>:</span><span class=n>tabs</span><span class=p>())</span> <span class=kr>do</span>
-</span></span><span class=line><span class=cl>  <span class=kr>if</span> <span class=n>tab</span><span class=p>:</span><span class=n>get_title</span><span class=p>()</span> <span class=o>==</span> <span class=n>id</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>   <span class=n>target_tab</span> <span class=o>=</span> <span class=n>tab</span>
-</span></span><span class=line><span class=cl>   <span class=n>wezterm.log_info</span><span class=p>(</span><span class=s2>&#34;Found existing tab&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>   <span class=kr>break</span>
-</span></span><span class=line><span class=cl>  <span class=kr>end</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>target_tab</span> <span class=kr>then</span>
-</span></span><span class=line><span class=cl>  <span class=n>target_tab</span> <span class=o>=</span> <span class=n>target_window</span><span class=p>:</span><span class=n>spawn_tab</span><span class=p>({</span> <span class=n>cwd</span> <span class=o>=</span> <span class=n>label</span> <span class=p>})</span>
-</span></span><span class=line><span class=cl>  <span class=n>target_tab</span><span class=p>:</span><span class=n>set_title</span><span class=p>(</span><span class=n>id</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=n>target_tab</span><span class=p>:</span><span class=n>activate</span><span class=p>()</span>
-</span></span><span class=line><span class=cl> <span class=n>mux.set_active_workspace</span><span class=p>(</span><span class=n>workspace</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>M.show_projects</span> <span class=o>=</span> <span class=kr>function</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>pane</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>choices_work</span> <span class=o>=</span> <span class=n>M.get_directories</span><span class=p>(</span><span class=s2>&#34;/Users/username/work&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>choices_personal</span> <span class=o>=</span> <span class=n>M.get_directories</span><span class=p>(</span><span class=s2>&#34;/Users/username/personal&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kd>local</span> <span class=n>choices</span> <span class=o>=</span> <span class=p>{}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>v</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>choices_work</span><span class=p>)</span> <span class=kr>do</span>
-</span></span><span class=line><span class=cl>  <span class=n>table.insert</span><span class=p>(</span><span class=n>choices</span><span class=p>,</span> <span class=n>v</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>v</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>choices_personal</span><span class=p>)</span> <span class=kr>do</span>
-</span></span><span class=line><span class=cl>  <span class=n>table.insert</span><span class=p>(</span><span class=n>choices</span><span class=p>,</span> <span class=n>v</span><span class=p>)</span>
-</span></span><span class=line><span class=cl> <span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> <span class=n>window</span><span class=p>:</span><span class=n>perform_action</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>  <span class=n>wezterm.action</span><span class=p>.</span><span class=n>InputSelector</span><span class=p>({</span>
-</span></span><span class=line><span class=cl>   <span class=n>action</span> <span class=o>=</span> <span class=n>wezterm.action_callback</span><span class=p>(</span><span class=n>M.open_project</span><span class=p>),</span>
-</span></span><span class=line><span class=cl>   <span class=n>choices</span> <span class=o>=</span> <span class=n>choices</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>   <span class=n>fuzzy</span> <span class=o>=</span> <span class=kc>true</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>   <span class=n>title</span> <span class=o>=</span> <span class=s2>&#34;💡 Choose a project&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>  <span class=p>}),</span>
-</span></span><span class=line><span class=cl>  <span class=n>pane</span>
-</span></span><span class=line><span class=cl> <span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=kr>end</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=kr>return</span> <span class=n>M</span>
-</span></span></code></pre></td></tr></table></div></div><p>And update the keys to:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=hl><span class=lnt> 3
-</span></span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=hl><span class=lnt>10
-</span></span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-lua data-lang=lua><span class=line><span class=cl><span class=kd>local</span> <span class=n>wezterm</span> <span class=o>=</span> <span class=n>require</span><span class=p>(</span><span class=s2>&#34;wezterm&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=kd>local</span> <span class=n>config</span> <span class=o>=</span> <span class=n>wezterm.config_builder</span><span class=p>()</span>
-</span></span><span class="line hl"><span class=cl><span class=kd>local</span> <span class=n>utils</span> <span class=o>=</span> <span class=n>require</span><span class=p>(</span><span class=s2>&#34;utils&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=n>config.leader</span> <span class=o>=</span> <span class=p>{</span> <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;a&#34;</span><span class=p>,</span> <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;CTRL&#34;</span><span class=p>,</span> <span class=n>timeout_milliseconds</span> <span class=o>=</span> <span class=mi>2000</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=n>config.keys</span> <span class=o>=</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>{</span>
-</span></span><span class=line><span class=cl>    <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;LEADER&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>    <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;p&#34;</span><span class=p>,</span>
-</span></span><span class="line hl"><span class=cl>    <span class=n>action</span> <span class=o>=</span> <span class=n>wezterm.action_callback</span><span class=p>(</span><span class=n>utils.show_projects</span><span class=p>),</span>
-</span></span><span class=line><span class=cl>  <span class=p>},</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p>Now you&rsquo;ll be able to automatically open your projects in different tabs in different windows separated by workspaces.</p><p>However, how to go back to the one you already opened? This code will automatically move you to the one you had opened
+<code>CTRL + a</code>.</p><p>In your <code>.wezterm.lua</code> file add:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-lua data-lang=lua><span class=line><span class=ln> 1</span><span class=cl><span class=kd>local</span> <span class=n>wezterm</span> <span class=o>=</span> <span class=n>require</span><span class=p>(</span><span class=s2>&#34;wezterm&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 2</span><span class=cl><span class=kd>local</span> <span class=n>config</span> <span class=o>=</span> <span class=n>wezterm.config_builder</span><span class=p>()</span>
+</span></span><span class=line><span class=ln> 3</span><span class=cl>
+</span></span><span class=line><span class=ln> 4</span><span class=cl><span class=n>config.leader</span> <span class=o>=</span> <span class=p>{</span> <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;a&#34;</span><span class=p>,</span> <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;CTRL&#34;</span><span class=p>,</span> <span class=n>timeout_milliseconds</span> <span class=o>=</span> <span class=mi>2000</span> <span class=p>}</span>
+</span></span><span class=line><span class=ln> 5</span><span class=cl><span class=n>config.keys</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 6</span><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=ln> 7</span><span class=cl>    <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;LEADER&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=ln> 8</span><span class=cl>    <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;p&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=ln> 9</span><span class=cl>    <span class=n>action</span> <span class=o>=</span> <span class=n>wezterm.action_callback</span><span class=p>(</span><span class=kr>function</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>pane</span><span class=p>)</span>
+</span></span><span class=line><span class=ln>10</span><span class=cl>    <span class=kr>end</span><span class=p>),</span>
+</span></span><span class=line><span class=ln>11</span><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=ln>12</span><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>With this configuration, now you&rsquo;ll be able to type <code>CTRL + a</code> then <code>p</code> and it will&mldr; not do nothing.</p><p>In order for this configuration to actually do something, we need more code. Add a new file in the same
+folder where your <code>.wezterm.lua</code> file is located called <code>utils.lua</code>. In this file, add the following code:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-lua data-lang=lua><span class=line><span class=ln>  1</span><span class=cl><span class=kd>local</span> <span class=n>M</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=ln>  2</span><span class=cl>
+</span></span><span class=line><span class=ln>  3</span><span class=cl><span class=n>M.get_directories</span> <span class=o>=</span> <span class=kr>function</span><span class=p>(</span><span class=n>path</span><span class=p>,</span> <span class=n>level</span><span class=p>)</span>
+</span></span><span class=line><span class=ln>  4</span><span class=cl> <span class=kd>local</span> <span class=n>directories</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=ln>  5</span><span class=cl> <span class=n>level</span> <span class=o>=</span> <span class=n>level</span> <span class=ow>or</span> <span class=mi>0</span>
+</span></span><span class=line><span class=ln>  6</span><span class=cl> <span class=kr>if</span> <span class=n>level</span> <span class=o>&gt;</span> <span class=mi>1</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln>  7</span><span class=cl>  <span class=kr>return</span> <span class=n>directories</span>
+</span></span><span class=line><span class=ln>  8</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln>  9</span><span class=cl>
+</span></span><span class=line><span class=ln> 10</span><span class=cl> <span class=c1>-- Use safer path handling</span>
+</span></span><span class=line><span class=ln> 11</span><span class=cl> <span class=kd>local</span> <span class=n>sanitized_path</span> <span class=o>=</span> <span class=n>string.gsub</span><span class=p>(</span><span class=n>path</span><span class=p>,</span> <span class=s1>&#39;&#34;&#39;</span><span class=p>,</span> <span class=s1>&#39;</span><span class=se>\\</span><span class=s1>&#34;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 12</span><span class=cl> <span class=kd>local</span> <span class=n>p</span> <span class=o>=</span> <span class=n>io.popen</span><span class=p>(</span><span class=s1>&#39;find &#34;&#39;</span> <span class=o>..</span> <span class=n>sanitized_path</span> <span class=o>..</span> <span class=s1>&#39;&#34; -maxdepth 1 -mindepth 1 </span><span class=se>\\</span><span class=s1>( -type d -o -type l </span><span class=se>\\</span><span class=s1>)&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 13</span><span class=cl>
+</span></span><span class=line><span class=ln> 14</span><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>p</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln> 15</span><span class=cl>  <span class=n>wezterm.log_warn</span><span class=p>(</span><span class=s2>&#34;Failed to open directory: &#34;</span> <span class=o>..</span> <span class=n>path</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 16</span><span class=cl>  <span class=kr>return</span> <span class=n>directories</span>
+</span></span><span class=line><span class=ln> 17</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 18</span><span class=cl>
+</span></span><span class=line><span class=ln> 19</span><span class=cl> <span class=kr>for</span> <span class=n>file</span> <span class=kr>in</span> <span class=n>p</span><span class=p>:</span><span class=n>lines</span><span class=p>()</span> <span class=kr>do</span>
+</span></span><span class=line><span class=ln> 20</span><span class=cl>  <span class=kd>local</span> <span class=n>dir_name</span> <span class=o>=</span> <span class=n>file</span><span class=p>:</span><span class=n>match</span><span class=p>(</span><span class=s2>&#34;([^/]+)$&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 21</span><span class=cl>  <span class=kr>if</span> <span class=n>dir_name</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln> 22</span><span class=cl>   <span class=n>table.insert</span><span class=p>(</span><span class=n>directories</span><span class=p>,</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 23</span><span class=cl>    <span class=n>label</span> <span class=o>=</span> <span class=n>file</span><span class=p>,</span>
+</span></span><span class=line><span class=ln> 24</span><span class=cl>    <span class=n>id</span> <span class=o>=</span> <span class=n>dir_name</span><span class=p>,</span>
+</span></span><span class=line><span class=ln> 25</span><span class=cl>   <span class=p>})</span>
+</span></span><span class=line><span class=ln> 26</span><span class=cl>
+</span></span><span class=line><span class=ln> 27</span><span class=cl>   <span class=c1>-- Recursively get subdirectories</span>
+</span></span><span class=line><span class=ln> 28</span><span class=cl>   <span class=kd>local</span> <span class=n>subdirs</span> <span class=o>=</span> <span class=n>M.get_directories</span><span class=p>(</span><span class=n>file</span><span class=p>,</span> <span class=n>level</span> <span class=o>+</span> <span class=mi>1</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 29</span><span class=cl>   <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>subdir</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>subdirs</span><span class=p>)</span> <span class=kr>do</span>
+</span></span><span class=line><span class=ln> 30</span><span class=cl>    <span class=n>table.insert</span><span class=p>(</span><span class=n>directories</span><span class=p>,</span> <span class=n>subdir</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 31</span><span class=cl>   <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 32</span><span class=cl>  <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 33</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 34</span><span class=cl>
+</span></span><span class=line><span class=ln> 35</span><span class=cl> <span class=n>p</span><span class=p>:</span><span class=n>close</span><span class=p>()</span>
+</span></span><span class=line><span class=ln> 36</span><span class=cl> <span class=kr>return</span> <span class=n>directories</span>
+</span></span><span class=line><span class=ln> 37</span><span class=cl><span class=kr>end</span>
+</span></span><span class=line><span class=ln> 38</span><span class=cl>
+</span></span><span class=line><span class=ln> 39</span><span class=cl><span class=n>M.open_project</span> <span class=o>=</span> <span class=kr>function</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>_</span><span class=p>,</span> <span class=n>id</span><span class=p>,</span> <span class=n>label</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 40</span><span class=cl> <span class=kd>local</span> <span class=n>mux</span> <span class=o>=</span> <span class=n>wezterm.mux</span>
+</span></span><span class=line><span class=ln> 41</span><span class=cl>
+</span></span><span class=line><span class=ln> 42</span><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>label</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln> 43</span><span class=cl>  <span class=n>wezterm.log_info</span><span class=p>(</span><span class=s2>&#34;Project selection cancelled&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 44</span><span class=cl>  <span class=kr>return</span>
+</span></span><span class=line><span class=ln> 45</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 46</span><span class=cl>
+</span></span><span class=line><span class=ln> 47</span><span class=cl> <span class=n>wezterm.emit</span><span class=p>(</span><span class=s2>&#34;tab-changed&#34;</span><span class=p>,</span> <span class=n>window</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 48</span><span class=cl>
+</span></span><span class=line><span class=ln> 49</span><span class=cl> <span class=kd>local</span> <span class=n>workspace</span> <span class=o>=</span> <span class=n>label</span><span class=p>:</span><span class=n>match</span><span class=p>(</span><span class=s2>&#34;([^/]+)/[^/]+$&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 50</span><span class=cl>
+</span></span><span class=line><span class=ln> 51</span><span class=cl> <span class=c1>-- Find existing window for workspace</span>
+</span></span><span class=line><span class=ln> 52</span><span class=cl> <span class=kd>local</span> <span class=n>target_window</span> <span class=o>=</span> <span class=kc>nil</span>
+</span></span><span class=line><span class=ln> 53</span><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>win</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>mux.all_windows</span><span class=p>())</span> <span class=kr>do</span>
+</span></span><span class=line><span class=ln> 54</span><span class=cl>  <span class=kr>if</span> <span class=n>win</span><span class=p>:</span><span class=n>get_workspace</span><span class=p>()</span> <span class=o>==</span> <span class=n>workspace</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln> 55</span><span class=cl>   <span class=n>target_window</span> <span class=o>=</span> <span class=n>win</span>
+</span></span><span class=line><span class=ln> 56</span><span class=cl>   <span class=kr>break</span>
+</span></span><span class=line><span class=ln> 57</span><span class=cl>  <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 58</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 59</span><span class=cl>
+</span></span><span class=line><span class=ln> 60</span><span class=cl> <span class=c1>-- Create new window if needed</span>
+</span></span><span class=line><span class=ln> 61</span><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>target_window</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln> 62</span><span class=cl>  <span class=kd>local</span> <span class=n>_</span><span class=p>,</span> <span class=n>_</span><span class=p>,</span> <span class=n>new_window</span> <span class=o>=</span> <span class=n>mux.spawn_window</span><span class=p>({</span>
+</span></span><span class=line><span class=ln> 63</span><span class=cl>   <span class=n>cwd</span> <span class=o>=</span> <span class=n>label</span><span class=p>,</span>
+</span></span><span class=line><span class=ln> 64</span><span class=cl>   <span class=n>workspace</span> <span class=o>=</span> <span class=n>workspace</span><span class=p>,</span>
+</span></span><span class=line><span class=ln> 65</span><span class=cl>  <span class=p>})</span>
+</span></span><span class=line><span class=ln> 66</span><span class=cl>  <span class=n>target_window</span> <span class=o>=</span> <span class=n>new_window</span>
+</span></span><span class=line><span class=ln> 67</span><span class=cl>  <span class=n>target_window</span><span class=p>:</span><span class=n>set_title</span><span class=p>(</span><span class=n>workspace</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 68</span><span class=cl>
+</span></span><span class=line><span class=ln> 69</span><span class=cl>  <span class=c1>-- Set title for initial tab</span>
+</span></span><span class=line><span class=ln> 70</span><span class=cl>  <span class=kd>local</span> <span class=n>tabs</span> <span class=o>=</span> <span class=n>target_window</span><span class=p>:</span><span class=n>tabs</span><span class=p>()</span>
+</span></span><span class=line><span class=ln> 71</span><span class=cl>  <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>tab</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>tabs</span><span class=p>)</span> <span class=kr>do</span>
+</span></span><span class=line><span class=ln> 72</span><span class=cl>   <span class=n>tab</span><span class=p>:</span><span class=n>set_title</span><span class=p>(</span><span class=n>id</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 73</span><span class=cl>   <span class=n>wezterm.log_info</span><span class=p>(</span><span class=s2>&#34;Created new tab:&#34;</span><span class=p>,</span> <span class=n>tab</span><span class=p>:</span><span class=n>get_title</span><span class=p>())</span>
+</span></span><span class=line><span class=ln> 74</span><span class=cl>  <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 75</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 76</span><span class=cl>
+</span></span><span class=line><span class=ln> 77</span><span class=cl> <span class=c1>-- Find existing tab or create new one</span>
+</span></span><span class=line><span class=ln> 78</span><span class=cl> <span class=kd>local</span> <span class=n>target_tab</span> <span class=o>=</span> <span class=kc>nil</span>
+</span></span><span class=line><span class=ln> 79</span><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>tab</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>target_window</span><span class=p>:</span><span class=n>tabs</span><span class=p>())</span> <span class=kr>do</span>
+</span></span><span class=line><span class=ln> 80</span><span class=cl>  <span class=kr>if</span> <span class=n>tab</span><span class=p>:</span><span class=n>get_title</span><span class=p>()</span> <span class=o>==</span> <span class=n>id</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln> 81</span><span class=cl>   <span class=n>target_tab</span> <span class=o>=</span> <span class=n>tab</span>
+</span></span><span class=line><span class=ln> 82</span><span class=cl>   <span class=n>wezterm.log_info</span><span class=p>(</span><span class=s2>&#34;Found existing tab&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 83</span><span class=cl>   <span class=kr>break</span>
+</span></span><span class=line><span class=ln> 84</span><span class=cl>  <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 85</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 86</span><span class=cl>
+</span></span><span class=line><span class=ln> 87</span><span class=cl> <span class=kr>if</span> <span class=ow>not</span> <span class=n>target_tab</span> <span class=kr>then</span>
+</span></span><span class=line><span class=ln> 88</span><span class=cl>  <span class=n>target_tab</span> <span class=o>=</span> <span class=n>target_window</span><span class=p>:</span><span class=n>spawn_tab</span><span class=p>({</span> <span class=n>cwd</span> <span class=o>=</span> <span class=n>label</span> <span class=p>})</span>
+</span></span><span class=line><span class=ln> 89</span><span class=cl>  <span class=n>target_tab</span><span class=p>:</span><span class=n>set_title</span><span class=p>(</span><span class=n>id</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 90</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln> 91</span><span class=cl>
+</span></span><span class=line><span class=ln> 92</span><span class=cl> <span class=n>target_tab</span><span class=p>:</span><span class=n>activate</span><span class=p>()</span>
+</span></span><span class=line><span class=ln> 93</span><span class=cl> <span class=n>mux.set_active_workspace</span><span class=p>(</span><span class=n>workspace</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 94</span><span class=cl><span class=kr>end</span>
+</span></span><span class=line><span class=ln> 95</span><span class=cl>
+</span></span><span class=line><span class=ln> 96</span><span class=cl><span class=n>M.show_projects</span> <span class=o>=</span> <span class=kr>function</span><span class=p>(</span><span class=n>window</span><span class=p>,</span> <span class=n>pane</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 97</span><span class=cl> <span class=kd>local</span> <span class=n>choices_work</span> <span class=o>=</span> <span class=n>M.get_directories</span><span class=p>(</span><span class=s2>&#34;/Users/username/work&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 98</span><span class=cl> <span class=kd>local</span> <span class=n>choices_personal</span> <span class=o>=</span> <span class=n>M.get_directories</span><span class=p>(</span><span class=s2>&#34;/Users/username/personal&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 99</span><span class=cl>
+</span></span><span class=line><span class=ln>100</span><span class=cl> <span class=kd>local</span> <span class=n>choices</span> <span class=o>=</span> <span class=p>{}</span>
+</span></span><span class=line><span class=ln>101</span><span class=cl>
+</span></span><span class=line><span class=ln>102</span><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>v</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>choices_work</span><span class=p>)</span> <span class=kr>do</span>
+</span></span><span class=line><span class=ln>103</span><span class=cl>  <span class=n>table.insert</span><span class=p>(</span><span class=n>choices</span><span class=p>,</span> <span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=ln>104</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln>105</span><span class=cl>
+</span></span><span class=line><span class=ln>106</span><span class=cl> <span class=kr>for</span> <span class=n>_</span><span class=p>,</span> <span class=n>v</span> <span class=kr>in</span> <span class=n>ipairs</span><span class=p>(</span><span class=n>choices_personal</span><span class=p>)</span> <span class=kr>do</span>
+</span></span><span class=line><span class=ln>107</span><span class=cl>  <span class=n>table.insert</span><span class=p>(</span><span class=n>choices</span><span class=p>,</span> <span class=n>v</span><span class=p>)</span>
+</span></span><span class=line><span class=ln>108</span><span class=cl> <span class=kr>end</span>
+</span></span><span class=line><span class=ln>109</span><span class=cl>
+</span></span><span class=line><span class=ln>110</span><span class=cl> <span class=n>window</span><span class=p>:</span><span class=n>perform_action</span><span class=p>(</span>
+</span></span><span class=line><span class=ln>111</span><span class=cl>  <span class=n>wezterm.action</span><span class=p>.</span><span class=n>InputSelector</span><span class=p>({</span>
+</span></span><span class=line><span class=ln>112</span><span class=cl>   <span class=n>action</span> <span class=o>=</span> <span class=n>wezterm.action_callback</span><span class=p>(</span><span class=n>M.open_project</span><span class=p>),</span>
+</span></span><span class=line><span class=ln>113</span><span class=cl>   <span class=n>choices</span> <span class=o>=</span> <span class=n>choices</span><span class=p>,</span>
+</span></span><span class=line><span class=ln>114</span><span class=cl>   <span class=n>fuzzy</span> <span class=o>=</span> <span class=kc>true</span><span class=p>,</span>
+</span></span><span class=line><span class=ln>115</span><span class=cl>   <span class=n>title</span> <span class=o>=</span> <span class=s2>&#34;💡 Choose a project&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=ln>116</span><span class=cl>  <span class=p>}),</span>
+</span></span><span class=line><span class=ln>117</span><span class=cl>  <span class=n>pane</span>
+</span></span><span class=line><span class=ln>118</span><span class=cl> <span class=p>)</span>
+</span></span><span class=line><span class=ln>119</span><span class=cl><span class=kr>end</span>
+</span></span><span class=line><span class=ln>120</span><span class=cl>
+</span></span><span class=line><span class=ln>121</span><span class=cl><span class=kr>return</span> <span class=n>M</span>
+</span></span></code></pre></div><p>And update the keys to:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-lua data-lang=lua><span class=line><span class=ln> 1</span><span class=cl><span class=kd>local</span> <span class=n>wezterm</span> <span class=o>=</span> <span class=n>require</span><span class=p>(</span><span class=s2>&#34;wezterm&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 2</span><span class=cl><span class=kd>local</span> <span class=n>config</span> <span class=o>=</span> <span class=n>wezterm.config_builder</span><span class=p>()</span>
+</span></span><span class="line hl"><span class=ln> 3</span><span class=cl><span class=kd>local</span> <span class=n>utils</span> <span class=o>=</span> <span class=n>require</span><span class=p>(</span><span class=s2>&#34;utils&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=ln> 4</span><span class=cl>
+</span></span><span class=line><span class=ln> 5</span><span class=cl><span class=n>config.leader</span> <span class=o>=</span> <span class=p>{</span> <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;a&#34;</span><span class=p>,</span> <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;CTRL&#34;</span><span class=p>,</span> <span class=n>timeout_milliseconds</span> <span class=o>=</span> <span class=mi>2000</span> <span class=p>}</span>
+</span></span><span class=line><span class=ln> 6</span><span class=cl><span class=n>config.keys</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=ln> 7</span><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=ln> 8</span><span class=cl>    <span class=n>mods</span> <span class=o>=</span> <span class=s2>&#34;LEADER&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=ln> 9</span><span class=cl>    <span class=n>key</span> <span class=o>=</span> <span class=s2>&#34;p&#34;</span><span class=p>,</span>
+</span></span><span class="line hl"><span class=ln>10</span><span class=cl>    <span class=n>action</span> <span class=o>=</span> <span class=n>wezterm.action_callback</span><span class=p>(</span><span class=n>utils.show_projects</span><span class=p>),</span>
+</span></span><span class=line><span class=ln>11</span><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=ln>12</span><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><p>Now you&rsquo;ll be able to automatically open your projects in different tabs in different windows separated by workspaces.</p><p>However, how to go back to the one you already opened? This code will automatically move you to the one you had opened
 if it exists. But, if you want to see which tabs you have open, that&rsquo;ll be done in the next entry.</p></article></main><footer class=site-footer><span class=prompt>visitor@abrahamsustaita.com:~$</span> echo © 2026 Abraham Sustaita</footer></div></body></html>
