@@ -15,7 +15,7 @@ Writing it manually would mean re-reading every commit, every planning doc, and 
 
 ## The Workflow
 
-I used four SOPs (Standard Operating Procedures) — structured prompts that define inputs, steps, and constraints for the AI to follow.
+I used three SOPs (Standard Operating Procedures) — structured prompts that define inputs, steps, and constraints for the AI to follow. The writing SOP was run multiple times as the draft evolved.
 
 ### SOP 1: Write the Draft
 
@@ -39,7 +39,7 @@ The audit served double duty. First, it caught real issues in the site (dead CSS
 
 Running the audit SOP before writing meant the AI had a structured list of discoveries to draw from, not just a vague memory of "we cleaned some stuff up."
 
-### SOP 3: Iterate on the Draft
+### Iterating on the Draft
 
 The draft wasn't done after one pass. The iteration went like this:
 
@@ -50,7 +50,7 @@ The draft wasn't done after one pass. The iteration went like this:
 
 Each iteration was a small commit. The draft evolved alongside the code it was describing.
 
-### SOP 4: Proof-Read
+### SOP 3: Proof-Read
 
 The proof-reading SOP is more rigorous. It has seven steps:
 
