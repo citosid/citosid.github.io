@@ -113,6 +113,8 @@ I ran the site through a UI audit focused on removing default AI-generated aesth
 
 4. **Hugo's line number table layout is a trap.** If you need to style highlighted lines in Hugo code blocks, use `lineNumbersInTable = false` from the start. The table layout makes cross-column styling nearly impossible without hacks.
 
+5. **Watch out for accidental AI aesthetics in your own choices.** After reading about AI slop's signature purple gradients, I realized my headings were all `--iris` (purple) across every theme. It was a real design token from Rosé Pine, not an AI default — but it still read as "generic AI site" to fresh eyes. Switching headings to `--gold` gave the site a warmer, more distinctive feel and broke the association.
+
 ## Next Steps
 
 - Theme the syntax highlighting colors per palette (currently hardcoded to Rosé Pine Moon)
