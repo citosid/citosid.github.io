@@ -1,7 +1,7 @@
 :root {
-  /* Rosé Pine Moon (default) */
-  --base: #232136;
-  --surface: #2a273f;
+  /* Rosé Pine Moon (default) — base/surface desaturated for cleaner bg */
+  --base: #1e1e2b;
+  --surface: #252535;
   --overlay: #6e6a86;
   --text: #e0def4;
   --subtle: #908caa;
