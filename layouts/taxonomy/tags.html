@@ -1,13 +1,10 @@
 {{ define "main" }}
-<div class="command-line">
-    <span class="prompt">me@{{ .Site.Title | lower }}:~$</span>
-    <span class="command">ls tags/</span>
-</div>
-
-<div class="output">
+<h1>All Tags</h1>
+<div class="tag-list">
     {{ range .Pages }}
-    <div class="post">
-        <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="post-meta">({{ len .Pages }})</span></h3>
+    <div class="tag-item">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="tag-count">({{ len .Pages }})</span>
     </div>
     {{ end }}
 </div>

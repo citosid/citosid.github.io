@@ -1,9 +1,4 @@
 {{ define "main" }}
-<div class="command-line">
-    <span class="prompt">me@{{ .Site.Title | lower }}:~$</span>
-    <span class="command">cat {{ .File.BaseFileName }}.md</span>
-</div>
-
 <article class="post-content">
     <h1 class="post-title">{{ .Title }}</h1>
     <div class="post-meta">

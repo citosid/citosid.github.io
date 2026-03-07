@@ -1,18 +1,15 @@
 {{ define "main" }}
-<div class="command-line">
-    <span class="prompt">me@{{ .Site.Title | lower }}:~$</span>
-    <span class="command">ls {{ .Title | lower }}/</span>
-</div>
-
-<div class="output">
+<div class="post-list">
     {{ range .Pages }}
-    <div class="post">
-        <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <div class="post-meta">
-            📆 {{ .Date.Format "January 2, 2006" }} 📖 {{ .ReadingTime }} min
-            {{ with .Params.tags }}
-            • Tags: {{ delimit . ", " }}
-            {{ end }}
+    <div class="post-row">
+        <div class="post-info">
+            <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
+            <span class="post-meta">
+                {{ .Date.Format "Jan 2, 2006" }}
+                {{ with .Params.tags }}
+                • {{ delimit . ", " }}
+                {{ end }}
+            </span>
         </div>
     </div>
     {{ end }}
