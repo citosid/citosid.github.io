@@ -1,0 +1,1 @@
+(function(){var e=document.getElementById("theme-select");if(!e)return;try{e.value=localStorage.getItem("theme")||"rose-pine"}catch{}e.addEventListener("change",function(){var e=this.value;document.documentElement.setAttribute("data-theme",e);try{localStorage.setItem("theme",e)}catch{}})})()
