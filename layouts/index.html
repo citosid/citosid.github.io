@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="about">
+    <p>Infrastructure engineer working on broadcasting systems at scale. I build tools that make development workflows smoother and maintain production systems that need to stay up.</p>
+    <p>Most of my day-to-day involves AWS, Kubernetes, and internal tooling. I spend time in Terraform, Python, and Lua—whatever gets the job done.</p>
+    <p class="about-links">
+        <a href="https://github.com/citosid">github</a>
+    </p>
+</section>
+{{ if .Pages }}
+<section class="posts-section">
+    <h2>Posts</h2>
+    <div class="post-list">
+        {{ range .Pages }}
+        <div class="post-row">
+            <div class="post-info">
+                <a href="{{ .RelPermalink }}" class="post-title-link">{{ .Title }}</a>
+                <span class="post-meta">
+                    {{ .Date.Format "Jan 2, 2006" }}{{ with .Params.tags }} · {{ delimit . ", " }}{{ end }}
+                </span>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+{{ end }}
