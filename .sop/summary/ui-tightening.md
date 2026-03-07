@@ -81,3 +81,15 @@ patterns found. Terminal blog concept is a genuine design decision.
 - Fixed: background to `--surface`, line numbers `--muted` with
   `border-right`, padding moved to `pre`, removed `!important`,
   added `user-select: none` on line numbers
+
+### Inline line numbers vs table layout (config.toml, code.css)
+- Hugo's `lineNumbersInTable = true` wraps code in a `<table>` with
+  two `<td>` columns — hard to style highlights across the gap
+- Switched to `lineNumbersInTable = false` which renders `.ln` spans
+  inline next to `.cl` code spans — much simpler structure
+- Full-width highlights on inline spans are tricky: `display:inline-block`
+  + `width:100%` collapses lines. Negative margin/padding trick
+  (`margin: 0 -1rem; padding: 0 1rem`) extends the background without
+  breaking layout
+- Highlighted line numbers use `--subtle` instead of `--muted` so
+  they're visible against the `--overlay` background
