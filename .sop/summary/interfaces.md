@@ -77,7 +77,14 @@ sequenceDiagram
 
 Steps:
 
-1. Checkout with submodules and full history
-2. Install Hugo extended (latest)
-3. `hugo --minify`
-4. Deploy `./public` to GitHub Pages (only on `main`, not PRs)
+1. Checkout with submodules and full history (`actions/checkout@v4`)
+2. Install Hugo extended (latest) (`peaceiris/actions-hugo@v2`)
+3. Install Node.js 20 (`actions/setup-node@v4`)
+4. `npm install` (PostCSS/Autoprefixer dependencies)
+5. `hugo --minify`
+6. Deploy `./public` to GitHub Pages (only on `main`, not PRs)
+
+Runner: `ubuntu-latest`
+
+Every push to `main` triggers a build and deploy, so changes go live
+within minutes of pushing. PRs trigger the build but not the deploy.
