@@ -18,6 +18,14 @@
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .site-title:hover {

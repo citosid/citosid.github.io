@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="{{ .Title | default .Site.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.description | default "Technical blog and personal website" }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}img/og-image.png">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     {{ $themeInit := resources.Get "js/theme-init.js" | minify }}
     <script>{{ $themeInit.Content | safeJS }}</script>
 
@@ -30,7 +45,10 @@
 <body>
     <div id="terminal">
         <header class="site-header">
-            <a href="/" class="site-title">abrahamsustaita.com</a>
+            <a href="/" class="site-title">
+                <img src="/favicon.svg" alt="" class="site-icon">
+                abrahamsustaita.com
+            </a>
             <nav class="site-nav">
                 <a href="/">~/home</a>
                 <a href="/tags">~/tags</a>
