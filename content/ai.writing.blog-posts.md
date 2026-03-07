@@ -88,7 +88,9 @@ That's the kind of catch that matters. I wrote the post based on what we'd discu
 
 There's something recursive about this. I used AI to refactor a website, then used AI to write about it, then used AI to proof-read what AI wrote, and now I'm using AI to write about that process. At some point you have to ask: where does the human contribution start and end?
 
-For me, the answer is clear: **the human contributes judgment.** I decided what the site should look like. I decided the code blocks were clunky. I decided "Codex UI" was the wrong term. I decided the headings shouldn't be purple. I decided the draft needed a lesson about accidental AI aesthetics. I decided when to publish.
+Case in point: while writing this very post, the AI said I used "three SOPs" but only listed two subsections. Then I asked it to add the missing one and it updated the count to "four SOPs" — except the fourth wasn't a separate SOP, it was just re-running the first one. It took two rounds of me saying "that's wrong" to get the count right. The AI was doing exactly what it's good at (synthesizing content, structuring sections) and exactly what it's bad at (counting its own output and reasoning about what constitutes a distinct thing).
+
+For me, the answer is clear: **the human contributes judgment.** I decided what the site should look like. I decided the code blocks were clunky. I decided "Codex UI" was the wrong term. I decided the headings shouldn't be purple. I decided the draft needed a lesson about accidental AI aesthetics. I decided when to publish. And I caught the SOP count error — twice.
 
 The AI contributed execution: reading files, writing CSS, synthesizing documents into prose, verifying facts against sources. It's fast and thorough at those tasks. But it never once said "this heading color is going to make your site look like AI slop." That observation came from me reading an article the AI found.
 
