@@ -84,7 +84,7 @@ This extends the background to the edges of the `<pre>` padding without affectin
 
 ### Uncodixfy Audit
 
-I ran the site through a UI audit focused on removing AI-generated aesthetic patterns — what I call "Codex UI." The site scored well since the terminal concept was a real design decision, but we found and fixed:
+I ran the site through a UI audit focused on removing default AI-generated aesthetic patterns — what the industry calls ["AI slop"](https://techbytes.app/posts/escape-ai-slop-frontend-design-guide/): the generic look you get when AI gravitates toward the statistical median of its training data (purple gradients, oversized rounded corners, glass effects, decorative animations). The site scored well since the terminal concept was a real design decision, but we found and fixed:
 
 - A dead `text-shadow` glow rule that didn't match any markup
 - Non-functional window control dot `<span>` elements in image shortcodes (no CSS existed for them — pure dead markup)
@@ -118,3 +118,11 @@ I ran the site through a UI audit focused on removing AI-generated aesthetic pat
 - Theme the syntax highlighting colors per palette (currently hardcoded to Rosé Pine Moon)
 - Add a `dotfiles theme generate` command that auto-generates the CSS block for new themes
 - Write more posts using this AI workflow and refine the process
+
+## References
+
+- [Escape AI Slop Frontend Design Guide](https://techbytes.app/posts/escape-ai-slop-frontend-design-guide/) — on distributional convergence and the AI aesthetic monoculture
+- [Breaking the AI Slop Aesthetic](https://paddo.dev/blog/claude-code-plugins-frontend-design/) — why LLMs default to the median of Tailwind tutorials
+- [Frontend Aesthetics Prompt](https://www.josecasanova.com/prompts/frontend-aesthetics/) — a system prompt designed to fight generic AI-generated UI
+- [Stop AI from generating purple slop](https://www.unslop.design/) — a tool for turning design vision into AI-proof specs
+- [Where does that purple gradient come from?](https://www.jackpearce.co.uk/notes/purple-gradient-ai-aesthetics/) — tracing the origins of the default AI color palette
