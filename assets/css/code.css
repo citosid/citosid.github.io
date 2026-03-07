@@ -43,8 +43,9 @@ code {
 }
 .chroma .line.hl {
   background-color: var(--overlay);
-  display: inline-block;
-  width: 100%;
+}
+.chroma .line.hl .ln {
+  color: var(--subtle);
 }
 .chroma .err {
   color: var(--love);
