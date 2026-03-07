@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
+    {{ $themeInit := resources.Get "js/theme-init.js" | minify }}
+    <script>{{ $themeInit.Content | safeJS }}</script>
+
     {{ $variables := resources.Get "css/variables.css" }}
     {{ $base := resources.Get "css/base.css" }}
     {{ $terminal := resources.Get "css/terminal.css" }}
