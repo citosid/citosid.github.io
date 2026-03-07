@@ -41,6 +41,10 @@ code {
   margin-right: 0.75em;
   user-select: none;
 }
+.chroma .line {
+  display: inline-block;
+  width: 100%;
+}
 .chroma .line.hl {
   background-color: var(--overlay);
 }
