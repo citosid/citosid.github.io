@@ -61,6 +61,19 @@
   font-size: 0.85em;
 }
 
+.footer-string {
+  color: var(--foam);
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.footer-link:hover {
+  color: var(--rose);
+}
+
 .prompt {
   color: var(--pine);
   margin-right: 0.5rem;
