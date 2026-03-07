@@ -1,7 +1,7 @@
 ---
 title: "Using AI to Write Blog Posts About Using AI"
 date: 2026-03-07
-draft: true
+draft: false
 tags: ["ai", "writing", "workflow", "meta"]
 ---
 
@@ -33,7 +33,7 @@ From that, it produced a first draft covering the full arc: problem, approach, A
 
 ### SOP 2: Audit the UI
 
-Before writing about the changes, we ran one more SOP — an Uncodixfy audit. This SOP reviews UI against a checklist of banned AI-generated aesthetic patterns: oversized rounded corners, glass effects, gradient backgrounds, decorative animations, dramatic shadows, and so on.
+Before writing about the changes, we ran one more SOP — an [Uncodixfy](https://github.com/cyxzdev/Uncodixfy) audit. Uncodixfy is a set of UI guidelines for catching what Anthropic's cookbook on [frontend aesthetics](https://platform.claude.com/cookbook/coding-prompting-for-frontend-aesthetics) calls "distributional convergence" — the tendency of AI to gravitate toward the statistical median of its training data, producing the generic look the industry now calls ["AI slop"](https://en.wikipedia.org/wiki/AI_slop). The SOP reviews UI against a checklist of banned patterns: oversized rounded corners, glass effects, gradient backgrounds, decorative animations, dramatic shadows, and so on.
 
 The audit served double duty. First, it caught real issues in the site (dead CSS rules, non-functional markup, overly heavy table headers). Second, it generated material for the blog post — the "Uncodixfy Audit" section of the refactoring article came directly from the audit's findings.
 
@@ -44,7 +44,7 @@ Running the audit SOP before writing meant the AI had a structured list of disco
 The draft wasn't done after one pass. The iteration went like this:
 
 1. AI generated the draft — I read it
-2. I noticed it used the term "Codex UI" to describe the generic AI aesthetic. I asked: is that an accepted industry term? The AI researched it and found the real term is "AI slop" — backed by multiple articles on distributional convergence. It updated the post with the correct terminology and added references.
+2. I noticed it used the term "Codex UI" to describe the generic AI aesthetic. I asked: is that an accepted industry term? The AI researched it and found the real term is ["AI slop"](https://en.wikipedia.org/wiki/AI_slop) — backed by multiple articles on [distributional convergence](https://platform.claude.com/cookbook/coding-prompting-for-frontend-aesthetics). It updated the post with the correct terminology and added references.
 3. After changing heading colors from purple to gold (an actual code change to the site), I told the AI to update the draft. It added a new lesson learned about accidental AI aesthetics.
 4. After changing inline code colors, same thing — the draft stayed in sync with the actual work.
 
