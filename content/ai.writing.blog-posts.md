@@ -15,7 +15,7 @@ Writing it manually would mean re-reading every commit, every planning doc, and 
 
 ## The Workflow
 
-I used three SOPs (Standard Operating Procedures) — structured prompts that define inputs, steps, and constraints for the AI to follow.
+I used four SOPs (Standard Operating Procedures) — structured prompts that define inputs, steps, and constraints for the AI to follow.
 
 ### SOP 1: Write the Draft
 
@@ -31,7 +31,15 @@ I pointed the AI at the planning documents in `.sop/planning/ui-refactor/` and t
 
 From that, it produced a first draft covering the full arc: problem, approach, AI workflow, technical details, what worked, what didn't, and lessons learned.
 
-### SOP 2: Iterate on the Draft
+### SOP 2: Audit the UI
+
+Before writing about the changes, we ran one more SOP — an Uncodixfy audit. This SOP reviews UI against a checklist of banned AI-generated aesthetic patterns: oversized rounded corners, glass effects, gradient backgrounds, decorative animations, dramatic shadows, and so on.
+
+The audit served double duty. First, it caught real issues in the site (dead CSS rules, non-functional markup, overly heavy table headers). Second, it generated material for the blog post — the "Uncodixfy Audit" section of the refactoring article came directly from the audit's findings.
+
+Running the audit SOP before writing meant the AI had a structured list of discoveries to draw from, not just a vague memory of "we cleaned some stuff up."
+
+### SOP 3: Iterate on the Draft
 
 The draft wasn't done after one pass. The iteration went like this:
 
@@ -42,7 +50,7 @@ The draft wasn't done after one pass. The iteration went like this:
 
 Each iteration was a small commit. The draft evolved alongside the code it was describing.
 
-### SOP 3: Proof-Read
+### SOP 4: Proof-Read
 
 The proof-reading SOP is more rigorous. It has seven steps:
 
