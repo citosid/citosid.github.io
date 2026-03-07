@@ -3,7 +3,7 @@
   background: var(--base) !important;
   background-color: var(--base) !important;
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 4px;
   overflow-x: auto;
   margin: 1rem 0;
   border: 1px solid var(--overlay);
@@ -28,8 +28,8 @@
 
 /* Inline code */
 code {
-  background-color: var(--base);
-  padding: 0.2em 0.4em;
+  background-color: var(--surface);
+  padding: 0.15em 0.35em;
   border-radius: 3px;
   color: var(--rose);
 }

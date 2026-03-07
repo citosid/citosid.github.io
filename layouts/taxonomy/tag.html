@@ -4,7 +4,7 @@
     {{ range .Pages }}
     <div class="post-row">
         <div class="post-info">
-            <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="post-title-link">{{ .Title }}</a>
             <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span>
         </div>
     </div>

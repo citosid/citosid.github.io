@@ -8,9 +8,9 @@
 body {
   background-color: var(--base);
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.6;
   min-height: 100vh;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 ::selection {
@@ -19,12 +19,6 @@ body {
 }
 
 @media (min-width: 1400px) {
-  body {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
   body {
     font-size: 15px;
   }
