@@ -32,43 +32,22 @@ code {
   color: var(--rose);
 }
 
-/* Rosé Pine Moon syntax highlighting */
+/* Line numbers and highlights */
 .chroma {
   color: var(--text);
 }
-.chroma .err {
-  color: var(--love);
-}
-.chroma .lntd {
-  vertical-align: top;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-.chroma .lntd:first-child {
-  border-right: none;
-}
-.chroma .lntable {
-  border-spacing: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-.chroma .lntable tr {
-  background: transparent;
-}
-.chroma .lntable tr:has(.hl) {
-  background-color: var(--overlay);
-}
-.chroma .hl {
-  background-color: var(--overlay);
-}
-.chroma .lnt,
 .chroma .ln {
   color: var(--muted);
-  margin-right: 0;
-  padding: 0 0.5em;
+  margin-right: 0.75em;
   user-select: none;
+}
+.chroma .line.hl {
+  background-color: var(--overlay);
+  display: inline-block;
+  width: 100%;
+}
+.chroma .err {
+  color: var(--love);
 }
 .chroma .k {
   color: var(--iris);
