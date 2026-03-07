@@ -1,8 +1,8 @@
 :root {
-  /* Rosé Pine Moon Color Palette */
+  /* Rosé Pine Moon (default) */
   --base: #232136;
   --surface: #2a273f;
-  --overlay: #393552;
+  --overlay: #6e6a86;
   --text: #e0def4;
   --subtle: #908caa;
   --muted: #6e6a86;
@@ -12,4 +12,184 @@
   --pine: #3e8fb0;
   --foam: #9ccfd8;
   --iris: #c4a7e7;
+}
+
+[data-theme="catppuccin-mocha"] {
+  --base: #1e1e2e;
+  --surface: #181825;
+  --overlay: #585b70;
+  --text: #cdd6f4;
+  --subtle: #bac2de;
+  --muted: #585b70;
+  --love: #f38ba8;
+  --gold: #f9e2af;
+  --rose: #f9e2af;
+  --pine: #89b4fa;
+  --foam: #94e2d5;
+  --iris: #f5c2e7;
+}
+
+[data-theme="catppuccin-frappe"] {
+  --base: #303446;
+  --surface: #292c3c;
+  --overlay: #626880;
+  --text: #c6d0f5;
+  --subtle: #b5bfe2;
+  --muted: #626880;
+  --love: #e78284;
+  --gold: #e5c890;
+  --rose: #e5c890;
+  --pine: #8caaee;
+  --foam: #81c8be;
+  --iris: #f4b8e4;
+}
+
+[data-theme="prism"] {
+  --base: #0d0f11;
+  --surface: #1a1e22;
+  --overlay: #4a6a8a;
+  --text: #e0e8f0;
+  --subtle: #a0b0c0;
+  --muted: #4a6a8a;
+  --love: #9f1724;
+  --gold: #e8a54a;
+  --rose: #edbb77;
+  --pine: #3b7bc6;
+  --foam: #7cc3ff;
+  --iris: #852c6b;
+}
+
+[data-theme="crystals"] {
+  --base: #0d1011;
+  --surface: #1a2022;
+  --overlay: #4a6a8a;
+  --text: #e0e8f0;
+  --subtle: #a0b0c0;
+  --muted: #4a6a8a;
+  --love: #a13031;
+  --gold: #e8a54a;
+  --rose: #edbb77;
+  --pine: #503090;
+  --foam: #11bbfe;
+  --iris: #a13bb1;
+}
+
+[data-theme="tron-ares"] {
+  --base: #0d0e11;
+  --surface: #1a1d22;
+  --overlay: #4a6a8a;
+  --text: #e0e8f0;
+  --subtle: #a0b0c0;
+  --muted: #4a6a8a;
+  --love: #b10703;
+  --gold: #c38b4c;
+  --rose: #cfa372;
+  --pine: #4a8ac4;
+  --foam: #43c0c0;
+  --iris: #c44a8a;
+}
+
+[data-theme="enterprise-desert"] {
+  --base: #0d0e11;
+  --surface: #1a1d22;
+  --overlay: #4a6a8a;
+  --text: #e0e8f0;
+  --subtle: #a0b0c0;
+  --muted: #4a6a8a;
+  --love: #8f4d23;
+  --gold: #d0a874;
+  --rose: #dcbf9a;
+  --pine: #79a2d2;
+  --foam: #43c0c0;
+  --iris: #c44a8a;
+}
+
+[data-theme="ai-machine"] {
+  --base: #0d0e11;
+  --surface: #1a1d22;
+  --overlay: #4a6a8a;
+  --text: #e0e8f0;
+  --subtle: #a0b0c0;
+  --muted: #4a6a8a;
+  --love: #d71e16;
+  --gold: #e8a54a;
+  --rose: #edbb77;
+  --pine: #4a8ac4;
+  --foam: #2d91b7;
+  --iris: #c44a8a;
+}
+
+[data-theme="ai-flower"] {
+  --base: #0d1011;
+  --surface: #1a2022;
+  --overlay: #4a6a8a;
+  --text: #e0e8f0;
+  --subtle: #a0b0c0;
+  --muted: #4a6a8a;
+  --love: #a65712;
+  --gold: #855d2c;
+  --rose: #ab7738;
+  --pine: #4a8ac4;
+  --foam: #00a9e4;
+  --iris: #c5518e;
+}
+
+[data-theme="aurora"] {
+  --base: #071417;
+  --surface: #142225;
+  --overlay: #496972;
+  --text: #d7e0e2;
+  --subtle: #98a0a2;
+  --muted: #496972;
+  --love: #ce7cc8;
+  --gold: #bab338;
+  --rose: #c2db6c;
+  --pine: #10ace6;
+  --foam: #00c7d6;
+  --iris: #8994f4;
+}
+
+[data-theme="headphones"] {
+  --base: #071418;
+  --surface: #142226;
+  --overlay: #496973;
+  --text: #d7e0e3;
+  --subtle: #98a0a3;
+  --muted: #496973;
+  --love: #d07cc5;
+  --gold: #b7b43a;
+  --rose: #bedc6f;
+  --pine: #1fabe7;
+  --foam: #00c6d9;
+  --iris: #8e93f3;
+}
+
+[data-theme="fantasy-autumn"] {
+  --base: #0f111b;
+  --surface: #1c1f29;
+  --overlay: #4d6777;
+  --text: #dcdee5;
+  --subtle: #9c9ea5;
+  --muted: #4d6777;
+  --love: #dc78ae;
+  --gold: #f98690;
+  --rose: #ffa997;
+  --pine: #52a3f1;
+  --foam: #00c1ed;
+  --iris: #ae88e7;
+}
+
+[data-theme="color-wall"] {
+  --base: #09131a;
+  --surface: #172128;
+  --overlay: #4b6875;
+  --text: #d8dfe4;
+  --subtle: #999fa4;
+  --muted: #4b6875;
+  --love: #d57abd;
+  --gold: #adb742;
+  --rose: #b4df78;
+  --pine: #36a8ec;
+  --foam: #00c4e1;
+  --iris: #9b8ff0;
 }
