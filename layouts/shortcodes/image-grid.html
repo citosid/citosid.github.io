@@ -5,11 +5,7 @@
         {{ $thumb := .Resize "400x" }}
         <figure class="terminal-image">
             <div class="image-frame">
-                <div class="image-header">
-                    <span class="window-button close"></span>
-                    <span class="window-button minimize"></span>
-                    <span class="window-button maximize"></span>
-                </div>
+                <div class="image-header"></div>
                 <img
                     src="{{ $thumb.RelPermalink }}"
                     alt="{{ .Title }}"

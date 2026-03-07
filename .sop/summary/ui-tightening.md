@@ -45,3 +45,29 @@ Documented: 2026-03-07
 - Only transition the specific property that changes
 - Background colors for containers, border colors for borders — don't mix
 - No decorative animations on content elements
+
+## Uncodixfy Audit — 2026-03-07
+
+### Overall Assessment
+Site scored well against the Uncodixfy standard. No major Codex-style
+patterns found. Terminal blog concept is a genuine design decision.
+
+### Issues Found and Fixed
+
+#### Dead text-shadow glow on site title (typography.css)
+- `.site-title a` had `text-shadow: 0 0 6px var(--iris)`
+- Selector didn't match markup (`.site-title` is the `<a>`, not a parent)
+- Even if it matched, glow was decorative — hierarchy already established
+  by position and font-weight
+- Fixed: removed the rule
+
+#### Non-functional window control dots (image shortcodes)
+- Both `image.html` and `image-grid.html` had three empty
+  `<span class="window-button ...">` elements
+- No CSS existed for `.window-button` — completely dead markup
+- Fixed: removed from both shortcodes
+
+#### Table header background too heavy (tables.css)
+- `th` used `background-color: var(--overlay)` (#6e6a86)
+- Too prominent against `--base` background
+- Fixed: changed to `var(--surface)` for subtler differentiation

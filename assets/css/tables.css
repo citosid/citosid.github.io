@@ -11,6 +11,6 @@ td {
 }
 
 th {
-  background-color: var(--overlay);
+  background-color: var(--surface);
   color: var(--foam);
 }

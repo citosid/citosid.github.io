@@ -11,10 +11,6 @@ h2 { font-size: 1.25rem; }
 h3 { font-size: 1.1rem; }
 h4, h5, h6 { font-size: 1rem; }
 
-.site-title a {
-  text-shadow: 0 0 6px var(--iris);
-}
-
 a {
   color: var(--foam);
   text-decoration: none;
