@@ -2,7 +2,7 @@
 title: "Building a Multi-Agent Document Intelligence System with Kiro CLI"
 date: 2026-03-08T13:00:00-04:00
 draft: false
-tags: ["ai", "multi-agent", "kiro", "architecture", "tutorial"]
+tags: ["ai", "multi-agent", "kiro"]
 ---
 
 I needed a way to ask questions about a pile of documents — PDFs, Word files, images — and get a
