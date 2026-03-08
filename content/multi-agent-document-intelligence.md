@@ -151,32 +151,15 @@ Each of these failures improved the system. That's the value of testing with rea
 
 This architecture isn't unique to Kiro CLI. The principles — context isolation, tool restriction, structured communication, hierarchical delegation — apply anywhere you're building multi-agent systems. The implementation details differ:
 
-- **GitHub Copilot** has a multi-agent system with 4 specialized agents (Explore, Task, Plan, Code-review), but currently lacks dynamic task decomposition and hierarchical delegation. The agents are fixed, not user-configurable.
+- **GitHub Copilot** has a multi-agent system with 4 specialized agents (Explore, Task, Plan, Code-review) that run in parallel, but these are fixed-purpose agents — not user-configurable for arbitrary workflows like document analysis. Custom agents [are now supported](https://onlyutkarsh.com/posts/2025/github-copilot-custom-agents/) in VS Code, but the CLI agents remain predefined.
 
-- **Roo Code** takes a cloud-based approach with 5 role-based agents (Explainer, Planner, Coder, PR Reviewer, PR Fixer). Each runs in an isolated cloud environment, which gives strong context isolation but requires cloud infrastructure.
+- **Roo Code** takes a cloud-based approach with 5 role-based agents ([Explainer, Planner, Coder, PR Reviewer, PR Fixer](https://docs.roocode.com/roo-code-cloud/cloud-agents)). Each runs in an isolated cloud environment, which gives strong context isolation but requires cloud infrastructure. Locally, Roo Code uses "Custom Modes" — specialized AI personas with scoped tool permissions — rather than a subagent delegation model.
 
-- **Cline** supports parallel research subagents that are read-only — they can explore the codebase but can't edit files. The restriction model is similar in spirit to what we built, though the configuration is prompt-based rather than declarative.
+- **Cline** supports [parallel subagents](https://cline-efdc8260.mintlify.app/features/subagents) that are read-only by design — they can explore the codebase but cannot edit files or execute commands. Each subagent gets its own context window. The restriction model is similar in spirit to what we built, though the configuration is less declarative.
 
 - **OpenCode** offers configurable agents with tool restrictions through a plugin system, providing flexibility similar to Kiro's JSON-based approach.
 
 The key differentiator in Kiro's approach is the declarative JSON configuration with explicit `availableAgents`, `trustedAgents`, and per-agent tool lists. You define the security model in configuration, not in prompts.
-
-## The Takeaway
-
-If you're building multi-agent systems for document analysis — or any task where context overflow is a risk — the architecture matters more than the prompts:
-
-1. **Restrict tools, don't just instruct.** If an agent shouldn't read files, remove `fs_read` from its tool list. Don't rely on "please don't read files" in the prompt.
-
-2. **One document per worker.** Context isolation isn't just about preventing overflow — it ensures each document gets the model's full attention.
-
-3. **Structured communication.** JSON envelopes with fixed schemas prevent raw text from leaking between agents and keep the orchestrator's context predictable.
-
-4. **Trust boundaries.** Read operations can be trusted. Write operations should require human approval. Not every subagent needs the same permission level.
-
-5. **Test with real documents.** Synthetic tests won't surface the XML response issue, the timeout on image-heavy DOCX files, or the model's preference for taking shortcuts when tools are available.
-6. **Audit your own implementation.** Run a formal review comparing your code against documented patterns. The gaps between design intent and actual behavior are where the real improvements hide.
-
-The system processes real work documents daily now — meeting preparations, venue specifications, project timelines — and produces cited answers that would have taken an afternoon of manual reading. The architecture is 4 JSON files and 7 SOPs. The complexity is in the design decisions, not the implementation.
 
 ## What the Architecture Review Found
 
@@ -209,9 +192,30 @@ Based on the review, the next iteration focuses on:
 5. Aligning documentation with the actual 4-agent implementation
 6. Eventually: summary caching and large document chunking
 
+## The Takeaway
+
+If you're building multi-agent systems for document analysis — or any task where context overflow is a risk — the architecture matters more than the prompts:
+
+1. **Restrict tools, don't just instruct.** If an agent shouldn't read files, remove `fs_read` from its tool list. Don't rely on "please don't read files" in the prompt.
+
+2. **One document per worker.** Context isolation isn't just about preventing overflow — it ensures each document gets the model's full attention.
+
+3. **Structured communication.** JSON envelopes with fixed schemas prevent raw text from leaking between agents and keep the orchestrator's context predictable.
+
+4. **Trust boundaries.** Read operations can be trusted. Write operations should require human approval. Not every subagent needs the same permission level.
+
+5. **Test with real documents.** Synthetic tests won't surface the XML response issue, the timeout on image-heavy DOCX files, or the model's preference for taking shortcuts when tools are available.
+
+6. **Audit your own implementation.** Run a formal review comparing your code against documented patterns. The gaps between design intent and actual behavior are where the real improvements hide.
+
+The system processes real work documents now — meeting preparations, venue specifications, project timelines — and produces cited answers that would have taken an afternoon of manual reading. The architecture is 4 JSON files and a handful of SOPs. The complexity is in the design decisions, not the implementation.
+
 ## References
 
 1. [Kiro CLI Documentation](https://kiro.dev/docs/cli/) - Agent configuration and subagent system
 2. [Model Context Protocol](https://modelcontextprotocol.io/) - Open standard for AI tool integration
 3. [AWS Labs Document Loader MCP Server](https://github.com/awslabs/mcp/tree/main/src/document-loader-mcp-server) - MCP server for document loading
 4. [Strands Agents SOP Specification](https://github.com/strands-agents/agent-sop) - Agent SOP methodology
+5. [Microsoft ISE: Patterns for Building a Scalable Multi-Agent System](https://devblogs.microsoft.com/ise/multi-agent-systems-at-scale/) - Orchestration patterns at scale
+6. [Roo Code Cloud Agents](https://docs.roocode.com/roo-code-cloud/cloud-agents) - Cloud-based agent team architecture
+7. [Cline Subagents](https://cline-efdc8260.mintlify.app/features/subagents) - Read-only parallel research agents
