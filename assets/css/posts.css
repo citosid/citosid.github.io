@@ -59,6 +59,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .post-meta {
+    white-space: normal;
+  }
+}
+
 .post-header {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
