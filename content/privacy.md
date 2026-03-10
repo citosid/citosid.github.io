@@ -1,3 +1,9 @@
+---
+title: "Privacy Policy"
+date: 2026-03-07
+draft: false
+---
+
 # Privacy Policy
 
 **Effective Date:** March 7, 2026  
